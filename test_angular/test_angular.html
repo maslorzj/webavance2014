@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Titre</title>
+  <script src="angular.js"></script>
+  <script src="module.js"></script>
+  <script src="test.js"></script>
+  <script src="testService.js"></script>
+</head>
+<body ng-controller="TestController">
+	<input type="text" ng-model="search.title"/>
+
+	<button ng-click="resetSearch()">Reset</button>
+	<ul>
+		<li ng-repeat="BD in TestService.BDs | filter:search | orderBy:'title'">
+			<p>{{BD.ISBN}}</p>
+			<p>{{BD.title}}</p>
+			<p>{{BD.saga}}</p>
+		</li>
+	</ul>
+
+
+</body>
+</html>
