@@ -7,15 +7,28 @@
   <script src="test.js"></script>
   <script src="testService.js"></script>
 </head>
-<body ng-controller="TestController">
-	<input type="text" ng-model="search.title"/>
 
-	<button ng-click="resetSearch()">Reset</button>
+<body ng-controller="TestController">
+	<input type="text" ng-model="search[searchType]" />
+	<select ng-model="searchType" ng-change='resetSearchField();'>
+		  <option value="$">Tout</option>
+          <option value="isbn">ISBN</option>
+          <option value="title" ng-selected="true">Titre</option>
+          <option value="editor">Editeur</option>
+          <option value="authorName">Nom de l'auteur</option>
+          <option value="authorFirstname">Prénom de l'auteur</option>
+          <option value="illusName">Nom de l'illustrateur</option>
+          <option value="illusFirstname">Prénom de l'illustrateur</option>
+          <option value="language">Langue</option>
+          <option value="publishDate">Date de publication</option>
+     </select>
+
+	<button ng-click="test();">Reset</button>
 	<ul>
-		<li ng-repeat="BD in TestService.BDs | filter:search | orderBy:'title'">
-			<p>{{BD.ISBN}}</p>
+		<li ng-repeat="BD in TestService.BDs | filter:search:strict | orderBy:orders">
+			<p>{{BD.isbn}}</p>
 			<p>{{BD.title}}</p>
-			<p>{{BD.saga}}</p>
+			<p>{{BD.editor}}</p>
 		</li>
 	</ul>
 
