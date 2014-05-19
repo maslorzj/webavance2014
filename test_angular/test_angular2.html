@@ -4,7 +4,6 @@
   <title>Titre</title>
   <script src="angular.js"></script>
   <script src="module.js"></script>
-  <script src="filters.js"></script>
   <script src="test.js"></script>
   <script src="testService.js"></script>
 </head>
@@ -24,16 +23,12 @@
         <option value="publishDate">Date de publication</option>
     </select>
 
-    <select ng-model="filterOrder">
-        <option value="title">Titre</option>
-        <option value="editor">Editeur</option>
-        <option value="authorName">Nom de l'auteur</option>
-    </select>
-
 	<button ng-click="test();">Reset</button>
 	<ul>
-		<li ng-repeat="BD in TestService.BDs | filter:search:strict | filter:filterTree() | unique:currentOrder | orderBy:filterOrders" ng-click="nextOrder(BD[currentOrder]);">
-			<p>{{BD[currentOrder]}}</p>
+		<li ng-repeat="BD in TestService.BDs | filter:search:strict | orderBy:orders">
+			<p>{{BD.isbn}}</p>
+			<p>{{BD.title}}</p>
+			<p>{{BD.editor}}</p>
 		</li>
 	</ul>
 </body>
