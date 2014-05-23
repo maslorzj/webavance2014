@@ -4,37 +4,30 @@
   <title>Titre</title>
   <script src="angular.js"></script>
   <script src="module.js"></script>
-  <script src="filters.js"></script>
   <script src="test.js"></script>
   <script src="testService.js"></script>
 </head>
 
-<body ng-controller="TestController">
-	<input type="text" ng-model="search[searchType]" />
-	<select ng-model="searchType" ng-change='resetSearchField();'>
-		<option value="$">Tout</option>
-        <option value="isbn">ISBN</option>
-        <option value="title">Titre</option>
-        <option value="editor">Editeur</option>
-        <option value="authorName">Nom de l'auteur</option>
-        <option value="authorFirstname">Prénom de l'auteur</option>
-      	<option value="illusName">Nom de l'illustrateur</option>
-        <option value="illusFirstname">Prénom de l'illustrateur</option>
-        <option value="language">Langue</option>
-        <option value="publishDate">Date de publication</option>
-    </select>
+<body ng-controller="TestController" ng-init="initController();">
+	<input type="text" ng-model="search" ng-change="test(search)" />
 
-    <select ng-model="filterOrder">
-        <option value="title">Titre</option>
-        <option value="editor">Editeur</option>
-        <option value="authorName">Nom de l'auteur</option>
-    </select>
+  <button ng-click="test(currentPrinted)">Test</button>
 
-	<button ng-click="test();">Reset</button>
+	<button ng-click="lastOrder();" ng-disabled="currentOrder<=0">Back</button>
 	<ul>
-		<li ng-repeat="BD in TestService.BDs | filter:search:strict | filter:filterTree() | unique:currentOrder | orderBy:filterOrders" ng-click="nextOrder(BD[currentOrder]);">
-			<p>{{BD[currentOrder]}}</p>
-		</li>
-	</ul>
+    <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" ng-click="nextOrder(bd[filterOrders[currentOrder]]);">
+      <p>{{printed}}</p>
+    </li>
+  </ul>
+  <ul>
+    <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" ng-click="nextOrder(bd[filterOrders[currentOrder]]);">
+      <div ng-show="currentOrder < filterOrders.length-1">
+        <p>{{printed}}</p>
+      </div>
+      <div ng-hide="currentOrder < filterOrders.length-1">
+        <p>je suis une patate</p>
+      </div>
+    </li>
+  </ul>
 </body>
 </html>
