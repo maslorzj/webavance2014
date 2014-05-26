@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-<head>
-  <title>Titre</title>
-  <script src="angular.js"></script>
-  <script src="module.js"></script>
-  <script src="test.js"></script>
-  <script src="testService.js"></script>
-</head>
+    <head>
+        <title>Titre</title>
+        <script src="angular.js"></script>
+        <script src="module.js"></script>
+        <script src="test.js"></script>
+        <script src="testService.js"></script>
+    </head>
 
-<body ng-controller="TestController" ng-init="initController();">
-	<input type="text" ng-model="search" ng-change="test(search)" />
+    <body ng-controller="TestController" ng-init="initController();">
+    	<!-- champs de recherche -->
+        <input type="text" ng-model="search" />
 
-  <button ng-click="test(currentPrinted)">Test</button>
+        <!-- bouton test -->
+        <button ng-click="test(filtersAvailable)">Test</button>
 
-	<button ng-click="lastOrder();" ng-disabled="currentOrder<=0">Back</button>
-	<ul>
-    <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" ng-click="nextOrder(bd[filterOrders[currentOrder]]);">
-      <p>{{printed}}</p>
-    </li>
-  </ul>
-  <ul>
-    <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" ng-click="nextOrder(bd[filterOrders[currentOrder]]);">
-      <div ng-show="currentOrder < filterOrders.length-1">
-        <p>{{printed}}</p>
-      </div>
-      <div ng-hide="currentOrder < filterOrders.length-1">
-        <p>je suis une patate</p>
-      </div>
-    </li>
-  </ul>
-</body>
+        <!-- bouton retour carrière -->
+    	<button ng-click="lastOrder();" ng-disabled="currentOrder == 0">Back</button>
+        
+        <!-- choix des filtres -->
+        <div>
+            <div ng-repeat="filter in filterOrders">
+                <select ng-change="changeFilter($index);" ng-model="filterOrders[$index]" >
+                    <option ng-repeat="available in filtersAvailable | filter:checkAvailableFilters($index);" ng-selected="available==filterOrders[$parent.$index]" >{{available}}</option>
+                </select>
+                <button ng-click="deleteFilter($index)" ng-disabled="filterOrders.length==1">Delete</button>
+            </div>
+            <!-- bouton ajouter filtre -->
+            <button ng-click="addNewFilter()" ng-disabled="filterOrders.length==filtersAvailable.length">Add filter</button>
+        </div>
+
+        <!-- partie de gauche -->
+    	<ul>
+            <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" ng-click="nextOrder(bd[filterOrders[currentOrder]]);">
+                <p>{{printed}}</p>
+            </li>
+        </ul>
+
+        <!-- partie du milieu -->
+        <div>
+            <ul>
+                <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" ng-click="nextOrder(bd[filterOrders[currentOrder]]);"  ng-if="currentOrder < filterOrders.length-1">
+                    <p>{{printed}}</p>
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat="bd in bds | filter:search | orderBy:filterOrders" ng-click="nextOrder(bd[filterOrders[currentOrder]]);"  ng-if="currentOrder == filterOrders.length-1">
+                    <p>Titre : {{bd.title}}</p>
+                    <p>Editeur : {{bd.editor}}</p>
+                    <p>Nom de l'auteur : {{bd.authorFirstname}} {{bd.authorName}}</p>                    
+                </li>
+            </ul>
+        </div>    
+    </body>
 </html>
