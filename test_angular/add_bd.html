@@ -8,21 +8,22 @@
     </head>
 
     <body ng-controller="AddBDController" ng-init="initController();">
-    	<form>
-            <div>ISBN : <input type="text" ng-model="newBd.isbn" /></div>
-            <div>Titre : <input type="text" ng-model="newBd.title" /></div>
-            <div>Nom de l'auteur : <input type="text" ng-model="newBd.authorName" /></div>
-            <div>Prénom de l'auteur : <input type="text" ng-model="newBd.authorFirstname" /></div>
-            <div>Nom de l'illustrateur : <input type="text" ng-model="newBd.illustratorName" /></div>
-            <div>Prénom de l'illustrateur : <input type="text" ng-model="newBd.illustratorFirstname" /></div>
-            <div>Editeur : <input type="text" ng-model="newBd.editor" /></div>
-            <div>Langue : <input type="text" ng-model="newBd.language" /></div>
-            <div>Date de publication : <input type="text" ng-model="newBd.publishDate" /></div>
+    	<form name="myForm">
+            ISBN : <input type="text" name="isbn" ng-model="newBd.isbn" required /><span ng-if="!myForm.isbn.$valid">Required</span><br/>
+            Titre : <input type="text" name="title" ng-model="newBd.title" required /><span ng-if="!myForm.title.$valid">Required</span><br/>
+            Nom de l'auteur : <input type="text" ng-model="newBd.authorName" /><br/>
+            Prénom de l'auteur : <input type="text" ng-model="newBd.authorFirstname" /><br/>
+            Nom de l'illustrateur : <input type="text" ng-model="newBd.illustratorName" /><br/>
+            Prénom de l'illustrateur : <input type="text" ng-model="newBd.illustratorFirstname" /><br/>
+            Editeur : <input type="text" ng-model="newBd.editor" /><br/>
+            Langue : <input type="text" ng-model="newBd.language" /><br/>
+            Date de publication : <input type="text" ng-model="newBd.publishDate" /><br/>
             <div ng-repeat="field in newBd.personnalFields">
                 <input type="text" ng-model="field.key" />
                 <input type="text" ng-model="field.value" />
                 <button ng-click="deleteField($index)">Supprimer</button>
             </div>
+            <div ng-if="newFieldError"><span>{{newFieldError}}</span></div>
             <button ng-click="addField()">Ajouter un champs personnalisable</button>
             <button ng-click="submit()">Submit</button>
         </form>
