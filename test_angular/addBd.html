@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" ng-app="myApp">
   <head>
     <script src="angular.min.js"></script>
     <script src="module.js"></script>
@@ -14,7 +14,7 @@
     <title>Ma BibliBD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap\css\bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="bd.css" rel="stylesheet">
@@ -58,7 +58,7 @@
     <div class="container">
       <div class="starter-template">
         <h1>Ajouter une BD</h1>
-        <form  name="myForm" class="col-lg-6">
+        <form name="myForm" class="col-lg-6">
                 <label for="isbn">ISBN* : </label>
                 <input id="isbn" type="text" name="isbn" ng-model="newBd.isbn" required />
                 <span ng-if="!myForm.isbn.$valid">Obligatoire</span>
@@ -103,6 +103,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
