@@ -3,6 +3,7 @@ package com.bibli.bd;
 import java.util.Collection;
 import java.util.List;
 import net.sf.hibernate.HibernateException;
+import net.sf.hibernate.Query;
 import net.sf.hibernate.Session;
 import net.sf.hibernate.Transaction;
 
@@ -18,16 +19,36 @@ public class HibernateImpl {
 		}
 	}
 
-	public Collection<Bd> fillBibliBd() {
+	public Collection<Classifying> getClassifyingByUserId(int userId) {
 		List list = null;
 		try {
-			list = session.find("from Bd");
+			Query query = session.createQuery("select classifying " +
+											  "from Classifying as classifying " + 
+											  "join classifying.id.User as user " +
+											  "where user.id = :user");
+			query.setLong("user", userId);
+			list = query.list();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
 
+	public Collection<Bd> getBdByUserId(int userId) {
+		List list = null;
+		try {	
+			Query query = session.createQuery("select bd_user.Bd " +
+											  "from BdUser as bd_user " +
+											  "join bd_user.User as user " +
+											  "where user.id = :user");
+			query.setLong("user", userId);
+			list = query.list();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}	
+	
 	public void insert(Bd emp) {
 		try {
 			// Transaction tx = session.beginTransaction();

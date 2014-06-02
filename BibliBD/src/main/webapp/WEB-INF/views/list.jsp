@@ -1,46 +1,62 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-<html>
-<head>
-<link href="<c:url value="/resources/bd.css" />" rel="stylesheet"
-	type="text/css" media="screen" />
-<title>Listing bds</title>
-</head>
-<body>
-	<div class="container">
-		<h1>BibliBD</h1>
-		<a href="NewBd">Add a BD into the BibliBD</a>
-		<table class="normal-table">
-			<thead>
-				<tr>
-					<th>ISBN</th>
-					<th>Editor</th>
-					<th>Title</th>
-					<th>Author name</th>
-					<th>Author firstname</th>
-					<th>Illustrator name</th>
-					<th>Illustrator firstname</th>
-					<th>Language</th>
-					<th>Publication date</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="record" items="${bibliBd}">
-					<tr>
-					<tr>
-						<td>${record.value.isbn}</td>
-						<td>${record.value.editor}</td>
-						<td>${record.value.title}</td>
-						<td>${record.value.authorName}</td>
-						<td>${record.value.authorFirstname}</td>
-						<td>${record.value.illusName}</td>
-						<td>${record.value.illusFirstname}</td>
-						<td>${record.value.language}</td>
-						<td>${record.value.publishDate}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-</body>
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Titre</title>
+        <script>var bibliBd = ${bibliBd};</script>
+        <script src="resources/js/angular.min.js"></script>
+        <script src="resources/js/module.js"></script>
+        <script src="resources/js/BdController.js"></script>
+        <script src="resources/js/BdService.js"></script>
+    </head>
+
+    <body ng-controller="BdController" ng-init="initController();">
+    	<!-- champs de recherche -->
+        <input type="text" ng-model="search" />
+
+        <!-- bouton retour carrière -->
+    	<button ng-click="lastOrder();" ng-disabled="currentOrder == 0">Back</button>
+        
+        <!-- choix des filtres -->
+        <div>
+            <div ng-repeat="filter in filterOrders">
+                <select ng-change="changeFilter($index);" ng-model="filterOrders[$index]" >
+                    <option ng-repeat="available in filtersAvailable | filter:checkAvailableFilters($index);" 
+                    	ng-selected="available==filterOrders[$parent.$index]" >{{available}}</option>
+                </select>
+                <button ng-click="deleteFilter($index)" 
+                	ng-disabled="filterOrders.length==1">Delete</button>
+            </div>
+            <!-- bouton ajouter filtre -->
+            <button ng-click="addNewFilter()" 
+            	ng-disabled="filterOrders.length==filtersAvailable.length">Add filter</button>
+        </div>
+
+        <!-- partie de gauche -->
+    	<ul>
+            <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" 
+           		ng-click="nextOrder(printed);">
+                <p>{{printed}}</p>
+            </li>
+        </ul>
+
+        <!-- partie du milieu -->
+        <div>
+            <ul>
+                <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" 
+                	ng-click="nextOrder(printed);"  
+                	ng-if="currentOrder < filterOrders.length-1">
+                    <p>{{printed}}</p>
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat="bd in bds | filter:search | orderBy:filterOrders" 
+                	ng-click="nextOrder(printed[filterOrders[currentOrder]]);"  
+                	ng-if="currentOrder == filterOrders.length-1">
+                    <p>Titre : {{bd.title}}</p>
+                    <p>Editeur : {{bd.editor}}</p>
+                    <p>Nom de l'auteur : {{bd.authorFirstname}} {{bd.authorName}}</p>                    
+                </li>
+            </ul>
+        </div>    
+    </body>
 </html>

@@ -1,27 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>New Bd</title>
-	</head>
-	<body>
-		<form action="add" method="POST">
-			<h1 align=center style='text-align: center'>BibliBD</h1>
-			<hr size=2 width="100%" align=center>
-			<!-- <br>Employee ID : <INPUT TYPE="text" NAME="id"> -->
-			<br />Editor : <INPUT TYPE="text" NAME="editor">
-			<br />Title : <INPUT TYPE="text" NAME="title">
-			<br />Author name : <INPUT TYPE="text" NAME="authorName">
-			<br />Author firstname : <INPUT TYPE="text" NAME="authorFirstname">
-			<br />Illustrator name : <INPUT TYPE="text" NAME="illusName">
-			<br />Illustrator firstname : <INPUT TYPE="text" NAME="illusFirstname">
-			<br />Language : <INPUT TYPE="text" NAME="language">
-			<br />Publication date : <INPUT TYPE="date" NAME="publishDate">
-			<br /><br />
-			
-			<INPUT TYPE="submit" value="Send">
-			<INPUT TYPE="reset" value="Reset">
-	</form>
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Titre</title>
+        <script src="resources/js/angular.min.js"></script>
+        <script src="resources/js/module.js"></script>
+        <script src="resources/js/addBd.js"></script>
+    </head>
 
-</body>
+    <body ng-controller="AddBDController" ng-init="initController();">
+    	<form>
+            <div>ISBN : <input type="text" ng-model="newBd.isbn" /></div>
+            <div>Titre : <input type="text" ng-model="newBd.title" /></div>
+            <div>Nom de l'auteur : <input type="text" ng-model="newBd.authorName" /></div>
+            <div>PrÃ©nom de l'auteur : <input type="text" ng-model="newBd.authorFirstname" /></div>
+            <div>Nom de l'illustrateur : <input type="text" ng-model="newBd.illustratorName" /></div>
+            <div>Prénom de l'illustrateur : <input type="text" ng-model="newBd.illustratorFirstname" /></div>
+            <div>Editeur : <input type="text" ng-model="newBd.editor" /></div>
+            <div>Langue : <input type="text" ng-model="newBd.language" /></div>
+            <div>Date de publication : <input type="text" ng-model="newBd.publishDate" /></div>
+            <div ng-repeat="field in newBd.personnalFields">
+                <input type="text" ng-model="field.key" />
+                <input type="text" ng-model="field.value" />
+                <button ng-click="deleteField($index)">Supprimer</button>
+            </div>
+            <button ng-click="addField()">Ajouter un champ personnalisable</button>
+            <button ng-click="submit()">Submit</button>
+        </form>
+    </body>
 </html>

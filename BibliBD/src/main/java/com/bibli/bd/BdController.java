@@ -4,37 +4,69 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BdController {
-	private static final Logger logger = LoggerFactory.getLogger(BdController.class);
-	private Map<String, Bd> bibliBd;
+	private static final Logger logger = LoggerFactory
+			.getLogger(BdController.class);
+	private JSONArray bibliBd, classifyingArray;
 	private HibernateImpl dao;
 
 	public BdController() {
-		bibliBd = new HashMap<String, Bd>();
 		dao = new HibernateImpl();
 		System.out.println("hibernate session created");
+		try {
+			bibliBd = getBibliBD(1);
+			classifyingArray = getClassifying(1);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
 
-		Collection<Bd> col = dao.fillBibliBd();
+	@RequestMapping(value = "/json/getBibliBD", method = RequestMethod.GET)
+	public JSONArray getBibliBD(int userId) throws JSONException {
+		bibliBd = new JSONArray();
+		Collection<Bd> col = dao.getBdByUserId(userId);
 		Iterator<Bd> i = col.iterator();
 		while (i.hasNext()) {
 			Bd bd = i.next();
-			bibliBd.put(bd.getIsbn(), bd);
+			JSONObject JSONBd = bd.toJSON();			
+			bibliBd.put(JSONBd);
 		}
-		logger.info("bibliBd initialized");
+		logger.info("bibliBD initialized");
+		return bibliBd;
+	}
+	
+	@RequestMapping(value = "/json/getClassifying", method = RequestMethod.GET)
+	public JSONArray getClassifying(int userId) throws JSONException {
+		classifyingArray = new JSONArray();
+		Collection<Classifying> col = dao.getClassifyingByUserId(userId);
+		Iterator<Classifying> i = col.iterator();
+		while (i.hasNext()) {
+			Classifying classifying = i.next();
+			JSONObject JSONClassifying = classifying.toJSON();			
+			classifyingArray.put(JSONClassifying);
+		}
+		return classifyingArray;
 	}
 
+	// ------------------@RequestMapping---------------------
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String list(Model model) {
 		logger.info("Listing bibliBd");
 		model.addAttribute("bibliBd", bibliBd);
+		model.addAttribute("classifyingArray", classifyingArray);
 		return "list";
 	}
 
@@ -49,7 +81,13 @@ public class BdController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String add(Bd bd, Model model) {
 		logger.info("add new bd " + bd.getTitle());
-		bibliBd.put(bd.getIsbn(), bd);
+		JSONObject JSONBd = new JSONObject();
+		try {
+			JSONBd = bd.toJSON();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		bibliBd.put(JSONBd);
 		dao.insert(bd);
 		model.addAttribute("bibliBd", bibliBd);
 		return "list";

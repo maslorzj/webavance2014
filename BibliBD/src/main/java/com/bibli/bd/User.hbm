@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="com.bibli.bd">
+	<class
+		name="User"
+		table="user"
+	>
+		<id
+			name="Id"
+			type="integer"
+			column="id"
+		>
+			<generator class="vm"/>
+		</id>
+
+		<property
+			name="Pseudo"
+			column="pseudo"
+			type="string"
+			not-null="true"
+			length="255"
+		/>
+		<property
+			name="Name"
+			column="name"
+			type="string"
+			not-null="true"
+			length="255"
+		/>
+		<property
+			name="Firstname"
+			column="firstname"
+			type="string"
+			not-null="true"
+			length="255"
+		/>
+
+
+	</class>
+</hibernate-mapping>
