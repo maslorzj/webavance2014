@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="angular.min.js"></script>
+    <script src="module.js"></script>
+    <script src="addBd.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Advanced Web Project">
     <meta name="author" content="EmerauldEnterprise">
     <link rel="shortcut icon" href="bootstrap/docs/assets/ico/favicon.png">
-    <script src="angular.js"></script>
-    <script src="module.js"></script>
-    <script src="addBd.js"></script>
+    
     <title>Ma BibliBD</title>
 
     <!-- Bootstrap core CSS -->
@@ -78,13 +79,13 @@
                 <input id="language" type="text" ng-model="newBd.language" />
                 <label for="date">Date de publication* : </label>
                 <input id="date" type="text" ng-model="newBd.publishDate" />
-            <div ng-repeat="field in newBd.personnalFields">
+            <!-- <div ng-repeat="field in newBd.personnalFields">
                 <input type="text" ng-model="field.key" />
                 <input type="text" ng-model="field.value" />
                 <button ng-click="deleteField($index)">Supprimer</button>
             </div>
             <div ng-if="newFieldError"><span>{{newFieldError}}</span></div>
-            <button ng-click="addField()">Ajouter un champs personnalisable</button>
+            <button ng-click="addField()">Ajouter un champs personnalisable</button> -->
             <button ng-click="submit()">Submit</button>
         </form>
       </div>
