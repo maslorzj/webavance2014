@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Web Project">
+    <meta name="author" content="EmerauldEnterprise">
+    <link rel="shortcut icon" href="bootstrap/docs/assets/ico/favicon.png">
+    <script src="angular.js"></script>
+    <script src="module.js"></script>
+    <script src="addBd.js"></script>
+    <title>Ma BibliBD</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="bd.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-controller="AddBDController" ng-init="initController();">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Ma BibliBD</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+            <li><a href="#">Ma BDthèque</a></li>
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
+            <li>          
+              <form class="navbar-form pull-right">
+                <input type="text" style="width:150px" class="input-sm form-control" placeholder="rechercher">
+                <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+              </form>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="starter-template">
+        <h1>Ajouter une BD</h1>
+        <form  name="myForm" class="col-lg-6">
+                <label for="isbn">ISBN* : </label>
+                <input id="isbn" type="text" name="isbn" ng-model="newBd.isbn" required />
+                <span ng-if="!myForm.isbn.$valid">Obligatoire</span>
+                <label for="title">Titre* : </label>
+                <input id="title" type="text" name="title" ng-model="newBd.title" required />
+                <span ng-if="!myForm.title.$valid">Obligatoire</span>
+                <label for="LastNameAut">Nom de l'auteur* : </label>
+                <input id="LastNameAut" type="text" ng-model="newBd.authorName" />
+                <label for="FirstNameAut">Prénom de l'auteur* : </label>
+                <input id="FirstNameAut" type="text" ng-model="newBd.authorFirstname" />
+                <label for="LastNameIll">Nom de l'illustrateur* : </label>
+                <input id="LastName" type="text" ng-model="newBd.illustratorName" />
+                <label for="FirstNameIll">Prénom de l'illustrateur* : </label>
+                <input id="FirstName" type="text" ng-model="newBd.illustratorFirstname" />
+                <label for="editor">Editeur* : </label>
+                <input id="editor" type="text" ng-model="newBd.editor" />
+                <label for="language">Langue* : </label>
+                <input id="language" type="text" ng-model="newBd.language" />
+                <label for="date">Date de publication* : </label>
+                <input id="date" type="text" ng-model="newBd.publishDate" />
+            <div ng-repeat="field in newBd.personnalFields">
+                <input type="text" ng-model="field.key" />
+                <input type="text" ng-model="field.value" />
+                <button ng-click="deleteField($index)">Supprimer</button>
+            </div>
+            <div ng-if="newFieldError"><span>{{newFieldError}}</span></div>
+            <button ng-click="addField()">Ajouter un champs personnalisable</button>
+            <button ng-click="submit()">Submit</button>
+        </form>
+      </div>
+    </div><!-- /.container -->
+
+    <footer class="footer" role="footer">
+      <div class="container">
+          <p>© 2014 Emerauld Enterprise</p>
+      </div>
+    </footer>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
