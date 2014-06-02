@@ -1,0 +1,33 @@
+body {
+  padding-top: 40px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border: 1px solid transparent;
+}
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.footer {
+  position: static;
+  background: none repeat scroll 0% 0% rgb(30, 30, 30);
+  color: rgb(255, 255, 255);
+  text-align: left;
+  width: 100%;
+}
+
