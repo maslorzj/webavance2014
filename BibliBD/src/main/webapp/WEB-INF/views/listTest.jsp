@@ -6,19 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmerauldEnterprise">
-        <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
+        <link rel="shortcut icon" href="bootstrap/docs/assets/ico/favicon.png">
         <script>var bibliBd = ${bibliBd};</script>
-        <script src="../../resources/js/angular.min.js"></script>
-        <script src="../../resources/js/module.js"></script>
-        <script src="../../resources/js/BdController.js"></script>
-        <script src="../../resources/js/BdService.js"></script>
+        <script src="angular.min.js"></script>
+        <script src="module.js"></script>
+        <script src="BdController.js"></script>
+        <script src="BdService.js"></script>
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../../resources/css/bd.css" rel="stylesheet">
+        <link href="bd.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -50,7 +50,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="rechercher">
                                     <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-primary" type="button">
+                                        <button type="submit" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-search"></span>
                                         </button>
                                     </span>
@@ -70,7 +70,7 @@
             </div>
             <hr>
             <h3>Trier ma BDthèque :</h3>
-            <label
+            
         <input type="text" ng-model="search" />
 
         <!-- bouton retour arrière -->
@@ -92,7 +92,7 @@
         </div>
 
         <!-- partie de gauche -->
-        <ul>
+        <ul class ="col-sm-1">
             <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" 
                 ng-click="nextOrder(printed);">
                 <p>{{printed}}</p>
@@ -100,7 +100,7 @@
         </ul>
 
         <!-- partie du milieu -->
-        <div>
+        <div class ="col-xs-offset-2">
             <ul>
                 <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" 
                     ng-click="nextOrder(printed);"  
