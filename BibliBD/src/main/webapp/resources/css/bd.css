@@ -1,5 +1,5 @@
 body {
-  padding-top: 40px;
+  padding-top: 4%;
 }
 .starter-template {
   padding: 40px 15px;
@@ -24,6 +24,7 @@ body {
 }
 
 .footer {
+  margin-top: 25px;
   position: static;
   background: none repeat scroll 0% 0% rgb(30, 30, 30);
   color: rgb(255, 255, 255);
@@ -31,3 +32,22 @@ body {
   width: 100%;
 }
 
+.addBdForm{
+  text-align: center;
+}
+
+.mandatoryField{
+  color:#B20000;
+}
+
+.form-group{
+  padding-right: 5%;
+}
+
+#addImage{
+  padding-left:30%;
+}
+
+#addBtns{
+  padding-left: 40%;
+}
