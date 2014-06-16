@@ -6,19 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmerauldEnterprise">
-        <link rel="shortcut icon" href="bootstrap/docs/assets/ico/favicon.png">
-        <script>var bibliBd = ${bibliBd};</script>
-        <script src="angular.min.js"></script>
-        <script src="module.js"></script>
-        <script src="BdController.js"></script>
-        <script src="BdService.js"></script>
+        <link rel="shortcut icon" href="../../resources/css/bootstrap/docs/assets/ico/favicon.png">
+        <!-- <script>var bibliBd = ${bibliBd};</script> -->
+        <script src="../../resources/js/angular.min.js"></script>
+        <script src="../../resources/js/module.js"></script>
+        <script src="../../resources/js/BdController.js"></script>
+        <script src="../../resources/js/BdService.js"></script>
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="bd.css" rel="stylesheet">
+        <link href="../../resources/css/bd.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -79,9 +79,9 @@
         <!-- choix des filtres -->
         <div>
             <div ng-repeat="filter in filterOrders">
-                <select ng-change="changeFilter($index);" ng-model="filterOrders[$index]" >
+                <select ng-change="changeFilter();" ng-model="filterOrders[$index]" >
                     <option ng-repeat="available in filtersAvailable | filter:checkAvailableFilters($index);" 
-                        ng-selected="available==filterOrders[$parent.$index]" >{{available}}</option>
+                        ng-selected="available==filterOrders[$parent.$index]" >{{setFiltersNames(available)}}</option>
                 </select>
                 <button  class="btn btn-primary" ng-click="deleteFilter($index)" 
                     ng-disabled="filterOrders.length==1">Delete</button>
@@ -102,16 +102,8 @@
         <!-- partie du milieu -->
         <div class ="col-xs-offset-2">
             <ul>
-                <li ng-repeat="printed in currentPrinted | filter:search | orderBy:filterOrders" 
-                    ng-click="nextOrder(printed);"  
-                    ng-if="currentOrder < filterOrders.length-1">
-                    <p>{{printed}}</p>
-                </li>
-            </ul>
-            <ul>
                 <li ng-repeat="bd in bds | filter:search | orderBy:filterOrders" 
-                    ng-click="nextOrder(printed[filterOrders[currentOrder]]);"  
-                    ng-if="currentOrder == filterOrders.length-1">
+                    ng-click="nextOrder(bd[filterOrders[currentOrder]]);"  >
                     <p>Titre : {{bd.title}}</p>
                     <p>Editeur : {{bd.editor}}</p>
                     <p>Nom de l'auteur : {{bd.authorFirstname}} {{bd.authorName}}</p>                    

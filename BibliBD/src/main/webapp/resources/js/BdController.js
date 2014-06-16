@@ -2,17 +2,18 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 
 	// Initialize all variables
 	$scope.initController = function() {
-		$scope.filterOrders = {};
-		$scope.filterOrders = ['editor', 'authorName', 'title']; // à changer
-		$scope.filters = {editor:null};
-		$scope.currentOrder = 0;
-		$scope.bds = BdService.bds;
-		$scope.maxTableSize = 12;
-		$scope.getAllBds($scope.bds);
 		$scope.getAvailableFilters(BdService.bds);
+		$scope.reset();
 	};
 
-	// select the following level of bds, depending on the filters chosen
+	$scope.reset = function() {
+		$scope.filterOrders = ['editor', 'authorName', 'title']; // à load selon les choix de l'utilisateur
+		$scope.currentOrder = 0;
+		$scope.filters = {"$scope.filterOrders[$scope.currentOrder]":null};
+		$scope.getAllBds(BdService.bds);
+	};
+
+	// select the following level of bds, depending on the filter chosen
 	$scope.nextOrder = function(filter) {
 		$scope.filters[$scope.filterOrders[$scope.currentOrder]] = filter;
 		if($scope.currentOrder < $scope.filterOrders.length-1) {
@@ -70,10 +71,8 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
   	};
 
   	// change one of the current filter
-  	$scope.changeFilter = function(index) {
-  		if($scope.currentOrder == index) {
-  			$scope.getAllBds(BdService.bds);
-  		}
+  	$scope.changeFilter = function() {
+  		$scope.reset();
   	};
 
   	// add a new filter, selecting automatically the first filter available
@@ -97,9 +96,9 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
   		$scope.filterOrders.splice(index,1);
   	};
 
-  	// select all the possible filters from a bd
+  	// select all the possible filters from a bd, including personnal keys
 	$scope.getAvailableFilters = function(bdList) {
-		$scope.filtersAvailable = [];
+		/*$scope.filtersAvailable = [];
 		var availableList = {};
 		for (var i = 0; i < bdList.length; i++) {
 			angular.forEach(bdList[i], function(value, key){
@@ -112,6 +111,25 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 			if(key != "$$hashKey") {
 				$scope.filtersAvailable.push(key);					
 			}
+		});*/
+		$scope.filtersAvailable = ['isbn', 'editor', 'title', 'authorName', 'authorFirstname', 'illusName', 'illusFirstname', 'language'];
+	};
+
+	$scope.setFiltersNames = function(filter) {
+		var filtersNames = {'isbn': 'ISBN', 
+							'editor' : 'Editeur', 
+							'title' : 'Titre', 
+							'authorFirstname' : "Prénom de l'auteur", 
+							'authorName' : "Nom de l'auteur", 
+							'illusName' : "Nom de l'illustrateur", 
+							'illusFirstname': "Prénom de l'illustrateur",
+							'language' : "Langue"};
+		var name = filter;
+		angular.forEach(filtersNames, function(value, key){
+			if(filter == key) {
+				name = value;
+			}
 		});
+		return name;
 	};
 }]);
