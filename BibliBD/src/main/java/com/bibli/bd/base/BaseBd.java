@@ -21,17 +21,18 @@ import org.json.JSONObject;
 public abstract class BaseBd  implements Serializable {
 
 	public static String PROP_EDITOR = "Editor";
-	public static String PROP_ILLUS_FIRSTNAME = "IllusFirstname";
 	public static String PROP_COLOR_NAME = "ColorName";
+	public static String PROP_COUV_PATH = "CouvPath";
+	public static String PROP_SERIE = "Serie";
+	public static String PROP_TITLE = "Title";
+	public static String PROP_ILLUS_FIRSTNAME = "IllusFirstname";
 	public static String PROP_AUTHOR_NAME = "AuthorName";
 	public static String PROP_ID = "Id";
-	public static String PROP_ILLUS_NAME = "IllusName";
-	public static String PROP_LANGUAGE = "Language";
 	public static String PROP_AUTHOR_FIRSTNAME = "AuthorFirstname";
+	public static String PROP_LANGUAGE = "Language";
+	public static String PROP_ILLUS_NAME = "IllusName";
 	public static String PROP_COLOR_FIRSTNAME = "ColorFirstname";
 	public static String PROP_PUBLISH_DATE = "PublishDate";
-	public static String PROP_TITLE = "Title";
-	public static String PROP_SERIE = "Serie";
 
 
 	private int hashCode = Integer.MIN_VALUE;
@@ -45,6 +46,7 @@ public abstract class BaseBd  implements Serializable {
 	private java.lang.String _colorName;
 	private java.lang.String _title;
 	private java.lang.String _colorFirstname;
+	private java.lang.String _couvPath;
 	private java.lang.String _authorName;
 	private java.lang.String _authorFirstname;
 	private java.lang.String _illusFirstname;
@@ -73,6 +75,7 @@ public abstract class BaseBd  implements Serializable {
 		java.lang.String _id,
 		java.lang.String _editor,
 		java.lang.String _title,
+		java.lang.String _couvPath,
 		java.lang.String _authorName,
 		java.lang.String _authorFirstname,
 		java.lang.String _illusFirstname,
@@ -83,6 +86,7 @@ public abstract class BaseBd  implements Serializable {
 		this.setId(_id);
 		this.setEditor(_editor);
 		this.setTitle(_title);
+		this.setCouvPath(_couvPath);
 		this.setAuthorName(_authorName);
 		this.setAuthorFirstname(_authorFirstname);
 		this.setIllusFirstname(_illusFirstname);
@@ -193,6 +197,22 @@ public abstract class BaseBd  implements Serializable {
 	 */
 	public void setColorFirstname (java.lang.String _colorFirstname) {
 		this._colorFirstname = _colorFirstname;
+	}
+
+
+	/**
+	 * Return the value associated with the column: couvPath
+	 */
+	public java.lang.String getCouvPath () {
+		return _couvPath;
+	}
+
+	/**
+	 * Set the value related to the column: couvPath
+	 * @param _couvPath the couvPath value
+	 */
+	public void setCouvPath (java.lang.String _couvPath) {
+		this._couvPath = _couvPath;
 	}
 
 
@@ -322,6 +342,7 @@ public abstract class BaseBd  implements Serializable {
 	public JSONObject toJSON() throws JSONException {
 		JSONObject JSONBd = new JSONObject();
 		JSONBd.put("id", this.getId());
+		JSONBd.put("couvPath", this.getCouvPath());
 		JSONBd.put("editor", this.getEditor());
 		JSONBd.put("title", this.getTitle());
 		JSONBd.put("authorName", this.getAuthorName());

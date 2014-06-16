@@ -20,6 +20,6 @@ myApp.controller('AddBDController', ['$scope', '$http', function($scope, $http){
 	};
 
 	$scope.submit = function() {
-		console.log($scope.newBd);	
+		console.log($scope.newBd);
 	};
 }]);

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-    <head>
+    <head>    
         <title>Titre</title>
         <script>var bibliBd = ${bibliBd};</script>
         <script src="resources/js/angular.min.js"></script>
@@ -10,10 +10,12 @@
     </head>
 
     <body ng-controller="BdController" ng-init="initController();">
+    	<a href="newBd">Add a new BD</a>
+    
     	<!-- champs de recherche -->
         <input type="text" ng-model="search" />
 
-        <!-- bouton retour carriÃ¨re -->
+        <!-- bouton retour arrière -->
     	<button ng-click="lastOrder();" ng-disabled="currentOrder == 0">Back</button>
         
         <!-- choix des filtres -->

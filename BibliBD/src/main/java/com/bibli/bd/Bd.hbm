@@ -52,6 +52,13 @@
 			length="255"
 		/>
 		<property
+			name="CouvPath"
+			column="couvPath"
+			type="string"
+			not-null="true"
+			length="255"
+		/>
+		<property
 			name="AuthorName"
 			column="authorName"
 			type="string"

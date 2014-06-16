@@ -20,18 +20,33 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BdController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(BdController.class);
-	private JSONArray bibliBd, classifyingArray;
+	private JSONArray bibliBd, classifyingArray, bdtheque;
 	private HibernateImpl dao;
 
 	public BdController() {
 		dao = new HibernateImpl();
 		System.out.println("hibernate session created");
 		try {
+			bdtheque = getBDtheque();
 			bibliBd = getBibliBD(1);
 			classifyingArray = getClassifying(1);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@RequestMapping(value = "/json/getBDtheque", method = RequestMethod.GET)
+	public JSONArray getBDtheque() throws JSONException {
+		bdtheque = new JSONArray();
+		Collection<Bd> col = dao.getBds();
+		Iterator<Bd> i = col.iterator();
+		while (i.hasNext()) {
+			Bd bd = i.next();
+			JSONObject JSONBd = bd.toJSON();			
+			bdtheque.put(JSONBd);
+		}
+		logger.info("BDtheque initialized");
+		return bdtheque;
 	}
 
 	@RequestMapping(value = "/json/getBibliBD", method = RequestMethod.GET)
@@ -44,7 +59,6 @@ public class BdController {
 			JSONObject JSONBd = bd.toJSON();			
 			bibliBd.put(JSONBd);
 		}
-		logger.info("bibliBD initialized");
 		return bibliBd;
 	}
 	
@@ -62,6 +76,13 @@ public class BdController {
 	}
 
 	// ------------------@RequestMapping---------------------
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(Model model) {
+		logger.info("Listing Bdtheque");
+		model.addAttribute("bdtheque", bdtheque);
+		return "index";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String list(Model model) {
 		logger.info("Listing bibliBd");
@@ -70,12 +91,12 @@ public class BdController {
 		return "list";
 	}
 
-	@RequestMapping(value = "/NewBd", method = RequestMethod.GET)
+	@RequestMapping(value = "/newBd", method = RequestMethod.GET)
 	public String displayForm(Model model) {
 		logger.info("display form new bd");
 		Bd bd = new Bd();
 		model.addAttribute("bd", bd);
-		return "NewBd";
+		return "newBd";
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)

@@ -33,6 +33,17 @@ public class HibernateImpl {
 		}
 		return list;
 	}
+	
+	public Collection<Bd> getBds() {
+		List list = null;
+		try {	
+			Query query = session.createQuery("select from Bd");
+			list = query.list();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 
 	public Collection<Bd> getBdByUserId(int userId) {
 		List list = null;
@@ -49,10 +60,10 @@ public class HibernateImpl {
 		return list;
 	}	
 	
-	public void insert(Bd emp) {
+	public void insert(Bd bd) {
 		try {
 			// Transaction tx = session.beginTransaction();
-			session.save(emp);
+			session.save(bd);
 			// tx.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
