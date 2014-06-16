@@ -69,10 +69,12 @@
                 <div class="col-sm-4"></div>
             </div>
             <hr>
+            <h3>Trier ma BDthèque :</h3>
+            <label
         <input type="text" ng-model="search" />
 
         <!-- bouton retour arrière -->
-        <button ng-click="lastOrder();" ng-disabled="currentOrder == 0">Back</button>
+        <button class="btn btn-primary" ng-click="lastOrder();" ng-disabled="currentOrder == 0">Back</button>
         
         <!-- choix des filtres -->
         <div>
@@ -81,11 +83,11 @@
                     <option ng-repeat="available in filtersAvailable | filter:checkAvailableFilters($index);" 
                         ng-selected="available==filterOrders[$parent.$index]" >{{available}}</option>
                 </select>
-                <button ng-click="deleteFilter($index)" 
+                <button  class="btn btn-primary" ng-click="deleteFilter($index)" 
                     ng-disabled="filterOrders.length==1">Delete</button>
             </div>
             <!-- bouton ajouter filtre -->
-            <button ng-click="addNewFilter()" 
+            <button  class="btn btn-primary" ng-click="addNewFilter()" 
                 ng-disabled="filterOrders.length==filtersAvailable.length">Add filter</button>
         </div>
 
@@ -121,7 +123,7 @@
 
         <footer class="footer">
             <div class="container">
-                <p>© 2014 Emerauld Enterprise</p>
+                <p>© 2014 Emerald Enterprise</p>
             </div>
         </footer>
 
