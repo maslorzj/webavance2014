@@ -22,6 +22,9 @@
         <property name="jta.UserTransaction">java:comp/UserTransaction</property>
         
         <mapping resource="com/bibli/bd/Bd.hbm"/>
+        <mapping resource="com/bibli/bd/Classifying.hbm"/>
+        <mapping resource="com/bibli/bd/User.hbm"/>
+        <mapping resource="com/bibli/bd/BdUser.hbm"/>
         
     </session-factory>
 </hibernate-configuration>

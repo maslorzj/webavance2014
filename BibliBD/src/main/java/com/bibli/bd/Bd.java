@@ -16,17 +16,18 @@ public class Bd extends BaseBd {
 	/**
 	 * Constructor for primary key
 	 */
-	public Bd (java.lang.String _isbn) {
-		super(_isbn);
+	public Bd (java.lang.String _id) {
+		super(_id);
 	}
 
 	/**
 	 * Constructor for required fields
 	 */
 	public Bd (
-		java.lang.String _isbn,
+		java.lang.String _id,
 		java.lang.String _editor,
 		java.lang.String _title,
+		java.lang.String _couvPath,
 		java.lang.String _authorName,
 		java.lang.String _authorFirstname,
 		java.lang.String _illusFirstname,
@@ -35,9 +36,10 @@ public class Bd extends BaseBd {
 		java.util.Date _publishDate) {
 
 		super (
-			_isbn,
+			_id,
 			_editor,
 			_title,
+			_couvPath,
 			_authorName,
 			_authorFirstname,
 			_illusFirstname,
@@ -45,6 +47,5 @@ public class Bd extends BaseBd {
 			_illusName,
 			_publishDate);
 	}
-
 /*[CONSTRUCTOR MARKER END]*/
 }
