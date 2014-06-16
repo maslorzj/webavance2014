@@ -61,33 +61,27 @@
         </div>
         <form name="inscForm" method="POST" class="col-lg-6">
                 <div class="col-sm-12" id="addForm">
+                    <span class="mandatoryField">Tous les champs sont obligatoires</span>
                     <div class="form-group">
-                        <label for="pseudo" class="col-sm-6 control-label">Pseudo : 
-                            <span class="mandatoryField" ng-if="!inscForm.pseudo.$valid">Obligatoire</span>
-                        </label>
+                        <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
                         <div class="col-sm-6">
                             <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" ng-model="user.pseudo" required />
                         </div>     
                     </div>
                     <div class="form-group">
-                        <label for="email" class="col-sm-6 control-label">Email : 
-                            <span class="mandatoryField" ng-if="!inscForm.email.$valid">Obligatoire</span>
-                        </label>
+                        <label for="email" class="col-sm-6 control-label">Email : </label>
                         <div class="col-sm-6">
                             <input id="email" placeholder="jeandupont@example.com" class="form-control" type="email" name="email" ng-model="user.email" required />
                         </div>     
                     </div>
                     <div class="form-group">
-                        <label for="password" class="col-sm-6 control-label">Mot de passe : 
-                            <span class="mandatoryField" ng-if="!inscForm.password.$valid">Obligatoire</span>
-                        </label>
+                        <label for="password" class="col-sm-6 control-label">Mot de passe : </label>
                         <div class="col-sm-6">
                             <input id="password" class="form-control" type="password" name="password" ng-model="user.password" required />
                         </div>     
                     </div>
                     <div class="form-group">
                         <label for="passwordConf" class="col-sm-6 control-label">Confirmation : 
-                            <span class="mandatoryField" ng-if="!inscForm.passwordConf.$valid">Obligatoire</span>
                             <span class="mandatoryField" ng-if="!passwordsChecked">(identique)</span>
                         </label>
                         <div class="col-sm-6">
@@ -95,7 +89,7 @@
                         </div>     
                     </div>
                 </div>
-                <div ng-if="ajaxError"><span>{{ajaxError}}</span></div>
+                <div class="mandatoryField" ng-if="ajaxError"><span>{{ajaxError}}</span></div>
             <button ng-click="sendNewUser()">Envoyer</button>
         </form>
       </div>

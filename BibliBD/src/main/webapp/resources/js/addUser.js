@@ -21,7 +21,7 @@ myApp.controller('AddUserController', ['$scope', '$http', function($scope, $http
 			    }
 			);
 		} else {
-			$scope.ajaxError = "Veuillez remplir tous les champs obligatoires.";
+			$scope.ajaxError = "Veuillez remplir tous les champs.";
 		}
 	}
 
