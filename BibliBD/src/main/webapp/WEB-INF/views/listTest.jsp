@@ -27,7 +27,7 @@
         <![endif]-->
     </head>
 
-    <body ng-controller="BdController" ng-init="initController();">
+    <body ng-controller="BdController" ng-init="initController();" ng-cloak>
 
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -80,8 +80,8 @@
         <div>
             <div ng-repeat="filter in filterOrders">
                 <select ng-change="changeFilter();" ng-model="filterOrders[$index]" >
-                    <option ng-repeat="available in filtersAvailable | filter:checkAvailableFilters($index);" 
-                        ng-selected="available==filterOrders[$parent.$index]" >{{setFiltersNames(available)}}</option>
+                    <option ng-repeat="available in filtersAvailable | filter:checkAvailableFilters($index);"
+                        ng-selected="available==filterOrders[$parent.$index]" >{{available}}</option>
                 </select>
                 <button  class="btn btn-primary" ng-click="deleteFilter($index)" 
                     ng-disabled="filterOrders.length==1">Delete</button>

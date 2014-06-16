@@ -3,11 +3,11 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 	// Initialize all variables
 	$scope.initController = function() {
 		$scope.getAvailableFilters(BdService.bds);
+		$scope.filterOrders = ['editor', 'authorName', 'title']; // à load selon les choix de l'utilisateur
 		$scope.reset();
 	};
 
 	$scope.reset = function() {
-		$scope.filterOrders = ['editor', 'authorName', 'title']; // à load selon les choix de l'utilisateur
 		$scope.currentOrder = 0;
 		$scope.filters = {"$scope.filterOrders[$scope.currentOrder]":null};
 		$scope.getAllBds(BdService.bds);
@@ -115,21 +115,19 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 		$scope.filtersAvailable = ['isbn', 'editor', 'title', 'authorName', 'authorFirstname', 'illusName', 'illusFirstname', 'language'];
 	};
 
-	$scope.setFiltersNames = function(filter) {
-		var filtersNames = {'isbn': 'ISBN', 
-							'editor' : 'Editeur', 
-							'title' : 'Titre', 
+	/*$scope.setFiltersNames = function(filter) {
+		var filtersNames = {'isbn': "ISBN", 
+							'editor' : "Editeur", 
+							'title' : "Titre", 
 							'authorFirstname' : "Prénom de l'auteur", 
 							'authorName' : "Nom de l'auteur", 
 							'illusName' : "Nom de l'illustrateur", 
 							'illusFirstname': "Prénom de l'illustrateur",
 							'language' : "Langue"};
 		var name = filter;
-		angular.forEach(filtersNames, function(value, key){
-			if(filter == key) {
-				name = value;
-			}
-		});
-		return name;
-	};
+		if(filtersNames[filter]) {
+			name = filtersNames[filter];
+		}
+		return filter;
+	};*/
 }]);
