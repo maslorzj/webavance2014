@@ -114,20 +114,4 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 		});*/
 		$scope.filtersAvailable = ['isbn', 'editor', 'title', 'authorName', 'authorFirstname', 'illusName', 'illusFirstname', 'language'];
 	};
-
-	/*$scope.setFiltersNames = function(filter) {
-		var filtersNames = {'isbn': "ISBN", 
-							'editor' : "Editeur", 
-							'title' : "Titre", 
-							'authorFirstname' : "Prénom de l'auteur", 
-							'authorName' : "Nom de l'auteur", 
-							'illusName' : "Nom de l'illustrateur", 
-							'illusFirstname': "Prénom de l'illustrateur",
-							'language' : "Langue"};
-		var name = filter;
-		if(filtersNames[filter]) {
-			name = filtersNames[filter];
-		}
-		return filter;
-	};*/
 }]);
