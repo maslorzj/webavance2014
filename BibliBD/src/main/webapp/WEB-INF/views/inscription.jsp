@@ -57,7 +57,7 @@
         </div>
         <hr>
         <div class="col-sm-4 hidden-sm hidden-xs">
-            <img src="images/ajout.gif" id="addImage">
+            <img src="images/inscription.gif" id="addImage">
         </div>
         <form name="inscForm" method="POST" class="col-lg-6">
                 <div class="col-sm-12" id="addForm">
