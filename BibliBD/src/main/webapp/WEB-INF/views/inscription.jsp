@@ -57,7 +57,7 @@
         </div>
         <hr>
         <div class="col-sm-4 hidden-sm hidden-xs">
-            <img src="images/inscription.gif" id="addImage">
+            <img src="../../resources/img/inscription.jpg" id="inscriptionImage">
         </div>
         <form name="inscForm" method="POST" class="col-lg-6">
             <div class="col-sm-12" id="addForm">
@@ -90,7 +90,9 @@
                     </div>
                 </div>
                 <div class="mandatoryField" ng-if="ajaxError"><span>{{ajaxError}}</span></div>
-            <button class="btn" ng-click="sendNewUser()">Envoyer</button>
+            <button  class="btn btn-primary" ng-click="sendNewUser()">
+                Envoyer <span class="glyphicon glyphicon-ok-circle"></span>
+            </button>
         </form>
       </div>
     </div><!-- /.container -->
