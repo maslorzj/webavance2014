@@ -27,6 +27,7 @@
 
   <body ng-controller="AddBDController" ng-init="initController();">
 
+    <!-- Header -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -53,7 +54,9 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    <!-- /Header -->
 
+    <!-- Main -->
     <div class="container">
         <div class="row">
             <div class="col-sm-4"></div>
@@ -171,19 +174,19 @@
             </div>
             <div ng-if="ajaxError"><span>{{ajaxError}}</span></div>
         </form>
-      </div><!-- /.container -->
+      </div>
+    <!-- /Main -->
 
+    <!-- Footer -->
     <footer class="footer" role="footer">
       <div class="container">
           <p>© 2014 Emerald Enterprise</p>
       </div>
     </footer>
+    <!-- /Footer -->
 
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Bootstrap core JavaScript -->
     <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
     <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>

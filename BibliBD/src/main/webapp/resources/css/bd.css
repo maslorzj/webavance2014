@@ -40,7 +40,7 @@ body {
   color:#B20000;
 }
 
-.form-group{
+#addForm .form-group{
   padding-right: 5%;
 }
 
@@ -53,6 +53,25 @@ body {
   padding-left: 40%;
 }
 
+#inscriptionForm .form-group{
+  padding-right: 35%;
+}
+
 #inscriptionImage{
   padding-left: 30%;
+  padding-top: 10%;
+}
+
+#inscriptionBtn{
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+#inscriptionBtnRow{
+  padding-left: 42%;
+}
+
+#allMandatory{
+  padding-top: 1%;
+  padding-left: 35%;
 }

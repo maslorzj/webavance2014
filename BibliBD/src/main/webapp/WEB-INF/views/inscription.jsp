@@ -22,6 +22,7 @@
 
   <body ng-controller="AddUserController" ng-init="initController();">
 
+    <!-- Header -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -48,7 +49,9 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    <!-- /Header -->
 
+    <!-- Main -->
     <div class="container">
         <div class="row">
             <div class="col-sm-4"></div>
@@ -59,55 +62,57 @@
         <div class="col-sm-4 hidden-sm hidden-xs">
             <img src="../../resources/img/inscription.jpg" id="inscriptionImage">
         </div>
-        <form name="inscForm" method="POST" class="col-lg-6">
-            <div class="col-sm-12" id="addForm">
-                <p class="mandatoryField">Tous les champs sont obligatoires</p>
+        <form name="inscForm" method="POST" class="form-horizontal col-sm-8" role="form">
+            <div class="col-sm-12" id="inscriptionForm">
                 <div class="form-group">
                     <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
                     <div class="col-sm-6">
                         <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" ng-model="user.pseudo" required />
                     </div>     
                 </div>
-                    <div class="form-group">
-                        <label for="email" class="col-sm-6 control-label">Email : </label>
-                        <div class="col-sm-6">
-                            <input id="email" placeholder="jeandupont@example.com" class="form-control" type="email" name="email" ng-model="user.email" required />
-                        </div>     
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-sm-6 control-label">Mot de passe : </label>
-                        <div class="col-sm-6">
-                            <input id="password" class="form-control" type="password" name="password" ng-model="user.password" required />
-                        </div>     
-                    </div>
-                    <div class="form-group">
-                        <label for="passwordConf" class="col-sm-6 control-label">Confirmation : 
-                            <span class="mandatoryField" ng-if="!passwordsChecked">(identique)</span>
-                        </label>
-                        <div class="col-sm-6">
-                            <input id="passwordConf" class="form-control" type="password" name="passwordConf" ng-model="user.passwordConf" ng-change="checkPasswords()" required />
-                        </div>     
-                    </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-6 control-label">Email : </label>
+                    <div class="col-sm-6">
+                        <input id="email" placeholder="jeandupont@example.com" class="form-control" type="email" name="email" ng-model="user.email" required />
+                    </div>     
                 </div>
-                <div class="mandatoryField" ng-if="ajaxError"><span>{{ajaxError}}</span></div>
-            <button  class="btn btn-primary" ng-click="sendNewUser()">
-                Envoyer <span class="glyphicon glyphicon-ok-circle"></span>
-            </button>
+                <div class="form-group">
+                    <label for="password" class="col-sm-6 control-label">Mot de passe : </label>
+                    <div class="col-sm-6">
+                        <input id="password" class="form-control" type="password" name="password" ng-model="user.password" required />
+                    </div>     
+                </div>
+                <div class="form-group">
+                    <label for="passwordConf" class="col-sm-6 control-label">Confirmation : 
+                        <span class="mandatoryField" ng-if="!passwordsChecked">(identique)</span>
+                    </label>
+                    <div class="col-sm-6">
+                        <input id="passwordConf" class="form-control" type="password" name="passwordConf" ng-model="user.passwordConf" ng-change="checkPasswords()" required />
+                    </div>     
+                </div>
+            </div>
+            <p class="mandatoryField" id="allMandatory">Tous les champs sont obligatoires</p>
+            <div class="mandatoryField" ng-if="ajaxError"><span>{{ajaxError}}</span></div>
+            <div class="row" id="inscriptionBtnRow">
+                <button  id="inscriptionBtn" class="btn btn-primary" ng-click="sendNewUser()">
+                    je veux m'inscrire <span class="glyphicon glyphicon-ok-circle"></span>
+                </button>
+            </div>
         </form>
       </div>
-    </div><!-- /.container -->
+    </div>
+    <!-- /Main -->
 
+    <!-- Footer -->
     <footer class="footer" role="footer">
       <div class="container">
           <p>© 2014 Emerald Enterprise</p>
       </div>
     </footer>
+    <!-- /Footer -->
 
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Bootstrap core JavaScript -->
     <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
     <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
