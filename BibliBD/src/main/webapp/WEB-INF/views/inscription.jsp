@@ -37,7 +37,7 @@
           <ul class="nav navbar-nav">
             <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span>Accueil</a></li>
             <li><a href="/bd/">Ma BDthèque</a></li>
-            <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span>Ajouter une nouvelle BD</a></li>
+            <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span>Ajouter une nouvelle BD</a></li>
             <li>          
               <form class="navbar-form">
                 <input type="text" style="width:150px" class="input-sm form-control" placeholder="rechercher">
@@ -60,14 +60,14 @@
             <img src="images/inscription.gif" id="addImage">
         </div>
         <form name="inscForm" method="POST" class="col-lg-6">
-                <div class="col-sm-12" id="addForm">
-                    <span class="mandatoryField">Tous les champs sont obligatoires</span>
-                    <div class="form-group">
-                        <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
-                        <div class="col-sm-6">
-                            <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" ng-model="user.pseudo" required />
-                        </div>     
-                    </div>
+            <div class="col-sm-12" id="addForm">
+                <p class="mandatoryField">Tous les champs sont obligatoires</p>
+                <div class="form-group">
+                    <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
+                    <div class="col-sm-6">
+                        <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" ng-model="user.pseudo" required />
+                    </div>     
+                </div>
                     <div class="form-group">
                         <label for="email" class="col-sm-6 control-label">Email : </label>
                         <div class="col-sm-6">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="mandatoryField" ng-if="ajaxError"><span>{{ajaxError}}</span></div>
-            <button ng-click="sendNewUser()">Envoyer</button>
+            <button class="btn" ng-click="sendNewUser()">Envoyer</button>
         </form>
       </div>
     </div><!-- /.container -->
