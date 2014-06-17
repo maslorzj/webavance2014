@@ -6,24 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmerauldEnterprise">
-        <link rel="shortcut icon" href="../../resources/css/bootstrap/docs/assets/ico/favicon.png">
+        <link rel="shortcut icon" href="resources/css/bootstrap/docs/assets/ico/favicon.png">
         <!-- <script>var bibliBd = ${bibliBd};</script> -->
-        <script src="../../resources/js/angular.min.js"></script>
-        <script src="../../resources/js/module.js"></script>
-        <script src="../../resources/js/BdController.js"></script>
-        <script src="../../resources/js/BdService.js"></script>
+        <script src="resources/js/angular.min.js"></script>
+        <script src="resources/js/module.js"></script>
+        <script src="resources/js/BdController.js"></script>
+        <script src="resources/js/BdService.js"></script>
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../../resources/css/bd.css" rel="stylesheet">
+        <link href="resources/css/bd.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
-          <script src="../../assets/js/html5shiv.js"></script>
-          <script src="../../assets/js/respond.min.js"></script>
+          <script src="assets/js/html5shiv.js"></script>
+          <script src="assets/js/respond.min.js"></script>
         <![endif]-->
     </head>
 
@@ -123,6 +123,6 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
