@@ -113,5 +113,21 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 			}
 		});*/
 		$scope.filtersAvailable = ['isbn', 'editor', 'title', 'authorName', 'authorFirstname', 'illusName', 'illusFirstname', 'language'];
+		$scope.filtersNames = {'isbn': 'ISBN', 
+							'editor' : 'Editeur', 
+							'title' : 'Titre', 
+							'authorFirstname' : "Prénom de l'auteur", 
+							'authorName' : "Nom de l'auteur", 
+							'illusName' : "Nom de l'illustrateur", 
+							'illusFirstname': "Prénom de l'illustrateur",
+							'language' : "Langue"};
 	};
+
+	$scope.setFilterNames = function(filter){
+		var name = filter;
+		if($scope.filtersNames[filter]) {
+			name = $scope.filtersNames[filter];
+		}
+		return name;
+	}
 }]);

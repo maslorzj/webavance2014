@@ -81,7 +81,7 @@
             <div ng-repeat="filter in filterOrders">
                 <select ng-change="changeFilter();" ng-model="filterOrders[$index]" >
                     <option ng-repeat="available in filtersAvailable | filter:checkAvailableFilters($index);"
-                        ng-selected="available==filterOrders[$parent.$index]">{{available}}</option>
+                        ng-selected="available==filterOrders[$parent.$index]" ng-value="available">{{setFilterNames(available)}}</option>
                 </select>
                 <button  class="btn btn-primary" ng-click="deleteFilter($index)" 
                     ng-disabled="filterOrders.length==1">Delete</button>
