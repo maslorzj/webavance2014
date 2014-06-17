@@ -131,12 +131,12 @@
                         <input id="language" class="form-control" name="language" type="text" ng-model="newBd.language" required />
                     </div>
                 </div>
-                <!-- <div class="form-group">
-                    <label for="date" class="col-sm-6 control-label">Année de publication : </label>
+                <div class="form-group">
+                    <label for="publishDate" class="col-sm-6 control-label">Année de publication : </label>
                     <div class="col-sm-6">
-                        <input id="date" class="form-control" type="text" ng-model="newBd.publishDate" />
+                        <input id="publishDate" name="publishDate" class="form-control" type="date" ng-model="newBd.publishDate" />
                     </div>
-                </div> -->
+                </div>
                 <div class="form-group">
                     <label for="serie" class="col-sm-6 control-label">Série : </label>
                     <div class="col-sm-6">
