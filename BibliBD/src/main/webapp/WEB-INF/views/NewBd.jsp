@@ -70,11 +70,11 @@
         <form name="myForm" method="POST" class="form-horizontal col-sm-8" role="form">
             <div class="col-sm-12" id="addForm">
                 <div class="form-group">
-                    <label for="isbn" class="col-sm-6 control-label">ISBN : 
-                        <span class="mandatoryField" ng-if="!myForm.isbn.$valid">Obligatoire</span>
+                    <label for="id" class="col-sm-6 control-label">ISBN : 
+                        <span class="mandatoryField" ng-if="!myForm.id.$valid || !idLengthChecked">Obligatoire (10 ou 13 caractères)</span>
                     </label>
                     <div class="col-sm-6">
-                        <input id="isbn" placeholder="combinaison de 10 à 13 chiffres" class="form-control" type="text" name="isbn" ng-model="newBd.isbn" required />
+                        <input id="id" ng-change="checkIDLength()" placeholder="combinaison de 10 à 13 chiffres" class="form-control" type="text" name="id" ng-model="newBd.id" required/>
                     </div>     
                 </div>
                 <div class="form-group">
@@ -86,35 +86,35 @@
                     </div> 
                 </div>
                 <div class="form-group">
-                    <label for="LastNameAut" class="col-sm-6 control-label">Nom de l'auteur : 
-                        <span class="mandatoryField" ng-if="!myForm.LastNameAut.$valid">Obligatoire</span>
+                    <label for="authorName" class="col-sm-6 control-label">Nom de l'auteur : 
+                        <span class="mandatoryField" ng-if="!myForm.authorName.$valid">Obligatoire</span>
                     </label>
                     <div class="col-sm-6">
-                        <input id="LastNameAut" class="form-control" type="text" ng-model="newBd.authorName" />
+                        <input id="authorName" class="form-control" type="text" name="authorName" ng-model="newBd.authorName" required />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="FirstNameAut" class="col-sm-6 control-label">Prénom de l'auteur : 
-                        <span class="mandatoryField" ng-if="!myForm.FirstNameAut.$valid">Obligatoire</span>
+                    <label for="authorFirstname" class="col-sm-6 control-label">Prénom de l'auteur : 
+                        <span class="mandatoryField" ng-if="!myForm.authorFirstname.$valid">Obligatoire</span>
                     </label>
                     <div class="col-sm-6">
-                        <input id="FirstNameAut" class="form-control" type="text" ng-model="newBd.authorFirstname" />
+                        <input id="authorFirstname" class="form-control" type="text" name="authorFirstname" ng-model="newBd.authorFirstname" required />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="LastNameIll" class="col-sm-6 control-label">Nom de l'illustrateur : 
-                        <span class="mandatoryField" ng-if="!myForm.LastNameIll.$valid">Obligatoire</span>
+                    <label for="illustratorName" class="col-sm-6 control-label">Nom de l'illustrateur : 
+                        <span class="mandatoryField" ng-if="!myForm.illustratorName.$valid">Obligatoire</span>
                     </label>
                     <div class="col-sm-6">
-                        <input id="LastNameIll" class="form-control" type="text" ng-model="newBd.illustratorName" />
+                        <input id="illustratorName" class="form-control" name="illustratorName" type="text" ng-model="newBd.illustratorName" required/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="FirstNameIll" class="col-sm-6 control-label">Prénom de l'illustrateur : 
-                        <span class="mandatoryField" ng-if="!myForm.FirstNameIll.$valid">Obligatoire</span>
+                    <label for="illustratorFirstname" class="col-sm-6 control-label">Prénom de l'illustrateur : 
+                        <span class="mandatoryField" ng-if="!myForm.illustratorFirstname.$valid">Obligatoire</span>
                     </label>
                     <div class="col-sm-6">
-                        <input id="FirstNameIll" class="form-control" type="text" ng-model="newBd.illustratorFirstname" />
+                        <input id="illustratorFirstname" name="illustratorFirstname" class="form-control" type="text" ng-model="newBd.illustratorFirstname" required/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -122,52 +122,46 @@
                         <span class="mandatoryField" ng-if="!myForm.editor.$valid">Obligatoire</span>
                     </label>
                     <div class="col-sm-6">
-                        <input id="editor" class="form-control" type="text" ng-model="newBd.editor" />
+                        <input id="editor" name="editor" class="form-control" type="text" ng-model="newBd.editor" required/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="language" class="col-sm-6 control-label">Langue : </label>
                     <div class="col-sm-6">
-                        <input id="language" class="form-control" type="text" ng-model="newBd.language" />
+                        <input id="language" class="form-control" name="language" type="text" ng-model="newBd.language" required />
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="date" class="col-sm-6 control-label">Année de publication : </label>
                     <div class="col-sm-6">
                         <input id="date" class="form-control" type="text" ng-model="newBd.publishDate" />
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="serie" class="col-sm-6 control-label">Série : </label>
                     <div class="col-sm-6">
-                        <input id="serie" class="form-control" type="text" ng-model="newBd.serie" />
+                        <input id="serie" name="serie" class="form-control" type="text" ng-model="newBd.serie" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="colorName" class="col-sm-6 control-label">Nom du coloriste : </label>
                     <div class="col-sm-6">
-                        <input id="colorName" class="form-control" type="text" ng-model="newBd.colorName" />
+                        <input id="colorName" name="colorName" class="form-control" type="text" ng-model="newBd.colorName"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="colorFirstname" class="col-sm-6 control-label">Prénom du coloriste : </label>
                     <div class="col-sm-6">
-                        <input id="colorFirstname" class="form-control" type="text" ng-model="newBd.colorFirstname" />
+                        <input id="colorFirstname" name="colorFirstname" class="form-control" type="text" ng-model="newBd.colorFirstname" />
                     </div>
                 </div>
-
-                <div ng-repeat="field in newBd.personnalFields">
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" ng-model="field.key" />
+                <div class="form-group">
+                    <label for="couvPath" class="col-sm-6 control-label">Image de couverture : </label>
+                    <div class="col-sm-6">
+                        <input id="couvPath" name="couvPath" class="form-control" type="file" ng-model="newBd.couvPath" />
                     </div>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" ng-model="field.value" />
-                    </div>
-                    <button ng-click="deleteField($index)" class="btn btn-primary">Supprimer</button>
                 </div>
-                <div ng-if="newFieldError"><span>{{newFieldError}}</span></div>
                 <div id="addBtns">
-                    <button class="btn btn-primary" ng-click="addField()">Ajouter un champs personnalisable</button>
                     <button class="btn btn-primary" ng-click="sendNewBD()">Envoyer</button>
                 </div>
                     
