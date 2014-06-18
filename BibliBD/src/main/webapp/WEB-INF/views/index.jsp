@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
                 <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                <li><a href="/bd/"> Ma BDthèque</a></li>
+                <li><a href="/bd/"> Ma BDthÃ¨que</a></li>
                 <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
                 <li>          
                   <form class="navbar-form">
@@ -56,7 +56,7 @@
         <!-- Footer -->
         <footer class="footer navbar-fixed-bottom" role="footer">
           <div class="container">
-              <p>� 2014 Emerald Enterprise</p>
+              <p>© 2014 Emerald Enterprise</p>
           </div>
         </footer>
         <!-- /Footer -->
