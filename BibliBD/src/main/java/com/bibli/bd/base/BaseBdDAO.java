@@ -30,17 +30,17 @@ public abstract class BaseBdDAO extends com.bibli.bd.dao._RootDAO {
 		return com.bibli.bd.Bd.class;
 	}
 	
-	public com.bibli.bd.Bd load(java.lang.String key)
+	public com.bibli.bd.Bd load(java.lang.Long key)
 		throws net.sf.hibernate.HibernateException {
 		return (com.bibli.bd.Bd) load(getReferenceClass(), key);
 	}
 
-	public com.bibli.bd.Bd load(java.lang.String key, Session s)
+	public com.bibli.bd.Bd load(java.lang.Long key, Session s)
 		throws net.sf.hibernate.HibernateException {
 		return (com.bibli.bd.Bd) load(getReferenceClass(), key, s);
 	}
 
-	public com.bibli.bd.Bd loadInitialize(java.lang.String key, Session s) 
+	public com.bibli.bd.Bd loadInitialize(java.lang.Long key, Session s) 
 			throws net.sf.hibernate.HibernateException { 
 		com.bibli.bd.Bd obj = load(key, s); 
 		if (!Hibernate.isInitialized(obj)) {
@@ -55,9 +55,9 @@ public abstract class BaseBdDAO extends com.bibli.bd.dao._RootDAO {
 	 * @param bd a transient instance of a persistent class 
 	 * @return the class identifier
 	 */
-	public java.lang.String save(com.bibli.bd.Bd bd)
+	public java.lang.Long save(com.bibli.bd.Bd bd)
 		throws net.sf.hibernate.HibernateException {
-		return (java.lang.String) super.save(bd);
+		return (java.lang.Long) super.save(bd);
 	}
 
 	/**
@@ -68,9 +68,9 @@ public abstract class BaseBdDAO extends com.bibli.bd.dao._RootDAO {
 	 * @param s the Session
 	 * @return the class identifier
 	 */
-	public java.lang.String save(com.bibli.bd.Bd bd, Session s)
+	public java.lang.Long save(com.bibli.bd.Bd bd, Session s)
 		throws net.sf.hibernate.HibernateException {
-		return (java.lang.String) super.save(bd, s);
+		return (java.lang.Long) super.save(bd, s);
 	}
 
 	/**
@@ -124,7 +124,7 @@ public abstract class BaseBdDAO extends com.bibli.bd.dao._RootDAO {
 	 * Session or a transient instance with an identifier associated with existing persistent state. 
 	 * @param id the instance ID to be removed
 	 */
-	public void delete(java.lang.String id)
+	public void delete(java.lang.Long id)
 		throws net.sf.hibernate.HibernateException {
 		super.delete(load(id));
 	}
@@ -136,7 +136,7 @@ public abstract class BaseBdDAO extends com.bibli.bd.dao._RootDAO {
 	 * @param id the instance ID to be removed
 	 * @param s the Session
 	 */
-	public void delete(java.lang.String id, Session s)
+	public void delete(java.lang.Long id, Session s)
 		throws net.sf.hibernate.HibernateException {
 		super.delete(load(id, s), s);
 	}

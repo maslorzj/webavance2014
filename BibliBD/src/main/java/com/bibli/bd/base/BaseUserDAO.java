@@ -179,7 +179,7 @@ public abstract class BaseUserDAO extends com.bibli.bd.dao._RootDAO {
 	}
 
     public String getDefaultOrderProperty () {
-		return "Name";
+		return null;
     }
 
 }

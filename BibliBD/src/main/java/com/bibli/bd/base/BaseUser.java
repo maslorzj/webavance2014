@@ -20,8 +20,8 @@ import org.json.JSONObject;
  */
 public abstract class BaseUser  implements Serializable {
 
-	public static String PROP_NAME = "Name";
-	public static String PROP_FIRSTNAME = "Firstname";
+	public static String PROP_EMAIL = "Email";
+	public static String PROP_PASSWORD = "Password";
 	public static String PROP_ID = "Id";
 	public static String PROP_PSEUDO = "Pseudo";
 
@@ -32,9 +32,9 @@ public abstract class BaseUser  implements Serializable {
 	private java.lang.Integer _id;
 
 	// fields
+	private java.lang.String _email;
 	private java.lang.String _pseudo;
-	private java.lang.String _name;
-	private java.lang.String _firstname;
+	private java.lang.Integer _password;
 
 
 	// constructors
@@ -55,14 +55,14 @@ public abstract class BaseUser  implements Serializable {
 	 */
 	public BaseUser (
 		java.lang.Integer _id,
+		java.lang.String _email,
 		java.lang.String _pseudo,
-		java.lang.String _name,
-		java.lang.String _firstname) {
+		java.lang.Integer _password) {
 
 		this.setId(_id);
+		this.setEmail(_email);
 		this.setPseudo(_pseudo);
-		this.setName(_name);
-		this.setFirstname(_firstname);
+		this.setPassword(_password);
 		initialize();
 	}
 
@@ -91,6 +91,22 @@ public abstract class BaseUser  implements Serializable {
 
 
 	/**
+	 * Return the value associated with the column: email
+	 */
+	public java.lang.String getEmail () {
+		return _email;
+	}
+
+	/**
+	 * Set the value related to the column: email
+	 * @param _email the email value
+	 */
+	public void setEmail (java.lang.String _email) {
+		this._email = _email;
+	}
+
+
+	/**
 	 * Return the value associated with the column: pseudo
 	 */
 	public java.lang.String getPseudo () {
@@ -107,34 +123,18 @@ public abstract class BaseUser  implements Serializable {
 
 
 	/**
-	 * Return the value associated with the column: name
+	 * Return the value associated with the column: password
 	 */
-	public java.lang.String getName () {
-		return _name;
+	public java.lang.Integer getPassword () {
+		return _password;
 	}
 
 	/**
-	 * Set the value related to the column: name
-	 * @param _name the name value
+	 * Set the value related to the column: password
+	 * @param _password the password value
 	 */
-	public void setName (java.lang.String _name) {
-		this._name = _name;
-	}
-
-
-	/**
-	 * Return the value associated with the column: firstname
-	 */
-	public java.lang.String getFirstname () {
-		return _firstname;
-	}
-
-	/**
-	 * Set the value related to the column: firstname
-	 * @param _firstname the firstname value
-	 */
-	public void setFirstname (java.lang.String _firstname) {
-		this._firstname = _firstname;
+	public void setPassword (java.lang.Integer _password) {
+		this._password = _password;
 	}
 
 
@@ -169,8 +169,8 @@ public abstract class BaseUser  implements Serializable {
 		JSONObject JSONUser = new JSONObject();
 		JSONUser.put("id", this.getId());
 		JSONUser.put("pseudo", this.getPseudo());
-		JSONUser.put("name", this.getName());
-		JSONUser.put("firstname", this.getFirstname());
+		JSONUser.put("email", this.getEmail());
+		JSONUser.put("password", this.getPassword());
 		
 		return JSONUser;
 	}

@@ -2,6 +2,7 @@ package com.bibli.bd;
 
 import java.util.Collection;
 import java.util.List;
+
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Query;
 import net.sf.hibernate.Session;
@@ -15,17 +16,18 @@ public class HibernateImpl {
 			this.session = HibernateUtil.currentSession();
 			System.out.println("session retrieved successfully");
 		} catch (Exception e) {
-			System.err.println("unable to retrieve hibernate session " + e.getMessage());
+			System.err.println("unable to retrieve hibernate session "
+					+ e.getMessage());
 		}
 	}
 
 	public Collection<Classifying> getClassifyingByUserId(int userId) {
 		List list = null;
 		try {
-			Query query = session.createQuery("select classifying " +
-											  "from Classifying as classifying " + 
-											  "join classifying.id.User as user " +
-											  "where user.id = :user");
+			Query query = session.createQuery("select classifying "
+					+ "from Classifying as classifying "
+					+ "join classifying.id.User as user "
+					+ "where user.id = :user");
 			query.setLong("user", userId);
 			list = query.list();
 		} catch (HibernateException e) {
@@ -33,10 +35,10 @@ public class HibernateImpl {
 		}
 		return list;
 	}
-	
+
 	public Collection<Bd> getBds() {
 		List list = null;
-		try {	
+		try {
 			Query query = session.createQuery("select from Bd");
 			list = query.list();
 		} catch (HibernateException e) {
@@ -47,26 +49,84 @@ public class HibernateImpl {
 
 	public Collection<Bd> getBdByUserId(int userId) {
 		List list = null;
-		try {	
-			Query query = session.createQuery("select bd_user.Bd " +
-											  "from BdUser as bd_user " +
-											  "join bd_user.User as user " +
-											  "where user.id = :user");
+		try {
+			Query query = session.createQuery("select bd_user.Bd "
+					+ "from BdUser as bd_user " + "join bd_user.User as user "
+					+ "where user.id = :user");
 			query.setLong("user", userId);
 			list = query.list();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
 		return list;
-	}	
+	}
 	
-	public void insert(Bd bd) {
+	public Collection<User> IsUserExist(String pseudo, int password) {
+		List list = null;
 		try {
-			// Transaction tx = session.beginTransaction();
-			session.save(bd);
-			// tx.commit();
+			Query query = session.createQuery("select from User " 
+			+ "where pseudo = :userPseudo "
+			+ "and password = :userPassword");
+			query.setString("userPseudo", pseudo);
+			query.setInteger("userPassword", password);
+			list = query.list();
 		} catch (HibernateException e) {
 			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public void insertBd(Bd bd) {
+		if (bd.getCouvPath() == null) {
+			bd.setCouvPath("resources/img/couv/default.png");
+		}		
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			session.save(bd);
+			tx.commit();
+		} catch (Exception e) {
+			if (tx != null) {
+				try {
+					tx.rollback();
+				} catch (HibernateException e1) {
+					e.getMessage();
+				}
+			}
+		}
+	}
+	
+	public void insertBdUser(BdUser bdUser) {		
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			session.save(bdUser);
+			tx.commit();
+		} catch (Exception e) {
+			if (tx != null) {
+				try {
+					tx.rollback();
+				} catch (HibernateException e1) {
+					e.getMessage();
+				}
+			}
+		}
+	}
+	
+	public void insertUser(User user) {		
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			session.save(user);
+			tx.commit();
+		} catch (Exception e) {
+			if (tx != null) {
+				try {
+					tx.rollback();
+				} catch (HibernateException e1) {
+					e.getMessage();
+				}
+			}
 		}
 	}
 }
