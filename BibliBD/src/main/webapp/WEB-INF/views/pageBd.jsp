@@ -24,6 +24,7 @@
 
     <body ng-controller="BdController" ng-init="initController();">
 
+        <!-- Header -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -53,37 +54,42 @@
                             </form>
                         </li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </div>
+        <!-- /Header -->
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"><h1>--Ici Nom de la BD--</h1></div>
-                <div class="col-sm-4"></div>
-            </div>
-            <hr>
-            <div class="row">
-                <section class="col-md-6">
-                    <img src="../../resources/img/couv/default.png">
-                    <p>ici imaaaaaaaaaaaaaaaaaage</p>
-                </section>
-                <section class="col-md-6">
-                    <p>isbn, titre, série, nom prénom auteur, nom prénom illustrateur, nom rénom coloriste, éditeur, langue, année de publication</p>
-                </section>
+        <!-- Main -->
+        <div class="main" id="pageBd">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4"><h1>--Ici Nom de la BD--</h1></div>
+                    <div class="col-sm-4"></div>
+                </div>
+                <hr>
+                <div class="row">
+                    <section class="col-md-6">
+                        <img src="../../resources/img/couv/default.png">
+                        <p>ici imaaaaaaaaaaaaaaaaaage</p>
+                    </section>
+                    <section class="col-md-6">
+                        <p>isbn, titre, série, nom prénom auteur, nom prénom illustrateur, nom rénom coloriste, éditeur, langue, année de publication</p>
+                    </section>
+                </div>
             </div>
         </div>
+        <!-- /Main -->
 
+        <!-- Footer -->
         <footer class="footer">
             <div class="container">
                 <p>© 2014 Emerald Enterprise</p>
             </div>
         </footer>
+        <!-- Footer -->
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
