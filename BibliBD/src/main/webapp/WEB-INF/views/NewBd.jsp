@@ -41,9 +41,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span>Accueil</a></li>
+            <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
             <li><a href="list"> Ma BDthèque</a></li>
-            <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span>Ajouter une nouvelle BD</a></li>
+            <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
           </ul>
         </div>
       </div>

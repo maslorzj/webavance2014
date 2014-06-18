@@ -33,8 +33,8 @@
             </div>
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                <li><a href="/bd/"> Ma BDthÃ¨que</a></li>
+                <li class="active"><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                <li><a href="/bd/"> Ma BDthèque</a></li>
                 <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
                 <li>          
                   <form class="navbar-form">
@@ -50,6 +50,15 @@
 
         <!-- Main -->
         <div class="main" id="accueil">  
+          <div class="container">
+            <div class="carousel slide">  
+              <p>un carousel</p>
+            </div>
+          <div class="container marketing">
+            <div class="row">
+              <p>reste de la page</p>
+            </div>
+          </div>
         </div>
         <!-- /Main -->
 
