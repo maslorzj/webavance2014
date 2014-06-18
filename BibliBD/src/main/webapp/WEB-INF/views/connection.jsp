@@ -57,39 +57,52 @@
                     <div class="col-sm-4"></div>
                 </div>
                 <hr>
-                <div class="col-sm-4 hidden-sm hidden-xs">
-                    <img src="../../resources/img/connection.jpg" id="connectionImage">
-                </div>
-                <form name="coForm" method="POST" class="form-horizontal col-sm-8" role="form">
-                    <div class="col-sm-12" id="connectionForm">
-                        <div class="form-group">
-                            <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
-                            <div class="col-sm-6">
-                                <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" required />
-                            </div>     
+                <div class="row">
+                    <section class="col-md-4 hidden-sm hidden-xs" id="inscriptionLink">
+                        <div class="col-md-4">                            
+                            <div class="row hidden-sm hidden-xs" id="coInscriptionBtnRow">
+                                <a href="/inscription/" id="coInscriptionBtn">
+                                    <button class="btn btn-primary">
+                                        je veux m'inscrire !
+                                    </button>
+                                </a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password" class="col-sm-6 control-label">Mot de passe : </label>
-                            <div class="col-sm-6">
-                                <input id="password" class="form-control" type="password" name="password" required />
-                            </div>     
-                        </div>
-                    </div>
-                    <p class="mandatoryField" id="allMandatory">Tous les champs sont obligatoires</p>
-                    <div class="row" id="connectionBtnRow">
-                        <a href="/inscription/">
-                            <button  id="connectionBtn" class="btn btn-primary">
-                                Connexion <span class="glyphicon glyphicon-ok-circle"></span>
-                            </button>
-                        </a>
-                    </div>
-                </form>
-                <div class="row" id="inscriptionBtnRow">
-                    <a href="/inscription/">
-                        <button  id="inscriptionBtn" class="btn btn-primary">
-                            je veux m'inscrire <span class="glyphicon glyphicon-ok-circle"></span>
-                        </button>
-                    </a>
+                    </section>
+                    <section class="col-md-2 hidden-sm hidden-xs">
+                        <img src="../../resources/img/connection2.gif" id="connection2Image">
+                    </section>
+                    <section class="col-md-5" id="connectSection">
+                        <form name="coForm" method="POST" class="form-horizontal" role="form" id="coForm">
+                            <div class="col-md-12" id="connectionForm">
+                                <div class="form-group">
+                                    <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
+                                    <div class="col-sm-6">
+                                        <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" required />
+                                    </div>     
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-sm-6 control-label">Mot de passe : </label>
+                                    <div class="col-sm-6">
+                                        <input id="password" class="form-control" type="password" name="password" required />
+                                    </div>     
+                                </div>
+                            </div>
+                            <div class="row" id="connectionBtnRow">
+<!-- mettre bon lien ici -->                                
+                                <a href="#">
+                                    <button  id="connectionBtn" class="btn btn-primary">
+                                        Connexion <span class="glyphicon glyphicon-ok-circle"></span>
+                                    </button>
+                                </a>
+                                <a href="/inscription/" class="hidden-md hidden-lg">
+                                    <button  id="hiddeninscriptionBtn" class="btn btn-primary">
+                                        je veux m'inscrire !
+                                    </button>
+                                </a>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>

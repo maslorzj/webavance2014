@@ -103,3 +103,49 @@ body {
   border-radius:10px 0;
 }
 
+#inscriptionLink{
+  margin-left: 5%;
+  padding-top: 8%;
+  padding-bottom: 15%;
+  padding-right: 15%;
+  padding-left: 6%;
+  background-image: url(../../resources/img/connection1.png);
+  background-repeat: no-repeat;
+}
+
+#connection2Image{
+  margin-left: -50%;
+  padding-top: 80%;
+  padding-bottom: 20%;
+}
+
+#hiddenInscriptionBtnRow{
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+#coInscriptionBtn{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#coForm{
+  padding-top: 6%;
+  padding-bottom: 5%;
+  padding-left: 0%;
+  padding-right: 15%;
+}
+
+#connectSection{
+  margin-top: 4%;
+  width: auto;
+  border:2px solid #006dcc;  
+  -moz-border-radius:10px 10px;
+  -webkit-border-radius:10px 10px;
+  border-radius:10px 10px;
+}
+
+#connectionBtnRow{
+  padding-top: 5%;
+  padding-left: 58%;
+}
