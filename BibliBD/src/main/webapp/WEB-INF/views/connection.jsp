@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Advanced Web Project">
     <meta name="author" content="EmeraldEnterprise">
-    <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
+    <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
     
     <title>Ma BibliBD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="resources/css/bd.css" rel="stylesheet">
+    <link href="../../resources/css/bd.css" rel="stylesheet">
   </head>
 
   <body>
@@ -58,7 +58,7 @@
                 </div>
                 <hr>
                 <div class="col-sm-4 hidden-sm hidden-xs">
-                    <img src="resources/img/connection.jpg" id="connectionImage">
+                    <img src="../../resources/img/connection.jpg" id="connectionImage">
                 </div>
                 <form name="coForm" method="POST" class="form-horizontal col-sm-8" role="form">
                     <div class="col-sm-12" id="connectionForm">
@@ -105,7 +105,7 @@
 
 
         <!-- Bootstrap core JavaScript -->
-        <script src="resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
-        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

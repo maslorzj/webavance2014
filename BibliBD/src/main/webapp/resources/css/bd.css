@@ -85,27 +85,7 @@ body {
   padding-left: 35%;
 }
 
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 999px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-
-#inscription, #pageBd{
+#inscription, #pageBd, #connection{
   min-height: 100%;
   height: auto !important;
   margin: 0px auto -55px;
@@ -118,8 +98,8 @@ body {
   padding-bottom:4%;
   padding-left: 3%;
   padding-right: 3%;
-/*arrondir les coins en haut à gauche et en bas à droite*/
   -moz-border-radius:10px 0;
   -webkit-border-radius:10px 0;
   border-radius:10px 0;
 }
+
