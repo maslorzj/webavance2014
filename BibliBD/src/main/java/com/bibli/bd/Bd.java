@@ -16,7 +16,7 @@ public class Bd extends BaseBd {
 	/**
 	 * Constructor for primary key
 	 */
-	public Bd (java.lang.String _id) {
+	public Bd (java.lang.Long _id) {
 		super(_id);
 	}
 
@@ -24,16 +24,14 @@ public class Bd extends BaseBd {
 	 * Constructor for required fields
 	 */
 	public Bd (
-		java.lang.String _id,
+		java.lang.Long _id,
 		java.lang.String _editor,
 		java.lang.String _title,
 		java.lang.String _couvPath,
 		java.lang.String _authorName,
 		java.lang.String _authorFirstname,
 		java.lang.String _illusFirstname,
-		java.lang.String _language,
-		java.lang.String _illusName,
-		java.util.Date _publishDate) {
+		java.lang.String _illusName) {
 
 		super (
 			_id,
@@ -43,9 +41,7 @@ public class Bd extends BaseBd {
 			_authorName,
 			_authorFirstname,
 			_illusFirstname,
-			_language,
-			_illusName,
-			_publishDate);
+			_illusName);
 	}
 /*[CONSTRUCTOR MARKER END]*/
 }

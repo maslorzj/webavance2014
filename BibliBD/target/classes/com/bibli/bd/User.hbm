@@ -17,6 +17,13 @@
 		</id>
 
 		<property
+			name="Email"
+			column="email"
+			type="string"
+			not-null="true"
+			length="255"
+		/>
+		<property
 			name="Pseudo"
 			column="pseudo"
 			type="string"
@@ -24,18 +31,11 @@
 			length="255"
 		/>
 		<property
-			name="Name"
-			column="name"
-			type="string"
+			name="Password"
+			column="password"
+			type="integer"
 			not-null="true"
-			length="255"
-		/>
-		<property
-			name="Firstname"
-			column="firstname"
-			type="string"
-			not-null="true"
-			length="255"
+			length="10"
 		/>
 
 

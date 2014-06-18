@@ -1,9 +1,7 @@
 package com.bibli.bd;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BdController {
@@ -22,19 +19,22 @@ public class BdController {
 			.getLogger(BdController.class);
 	private JSONArray bibliBd, classifyingArray, bdtheque;
 	private HibernateImpl dao;
+	private User user;
 
 	public BdController() {
 		dao = new HibernateImpl();
 		System.out.println("hibernate session created");
-		try {
-			bdtheque = getBDtheque();
-			bibliBd = getBibliBD(1);
-			classifyingArray = getClassifying(1);
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
 	}
-	
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	// ------------------@RequestMapping---------------------
 	@RequestMapping(value = "/json/getBDtheque", method = RequestMethod.GET)
 	public JSONArray getBDtheque() throws JSONException {
 		bdtheque = new JSONArray();
@@ -42,7 +42,7 @@ public class BdController {
 		Iterator<Bd> i = col.iterator();
 		while (i.hasNext()) {
 			Bd bd = i.next();
-			JSONObject JSONBd = bd.toJSON();			
+			JSONObject JSONBd = bd.toJSON();
 			bdtheque.put(JSONBd);
 		}
 		logger.info("BDtheque initialized");
@@ -56,12 +56,12 @@ public class BdController {
 		Iterator<Bd> i = col.iterator();
 		while (i.hasNext()) {
 			Bd bd = i.next();
-			JSONObject JSONBd = bd.toJSON();			
+			JSONObject JSONBd = bd.toJSON();
 			bibliBd.put(JSONBd);
 		}
 		return bibliBd;
 	}
-	
+
 	@RequestMapping(value = "/json/getClassifying", method = RequestMethod.GET)
 	public JSONArray getClassifying(int userId) throws JSONException {
 		classifyingArray = new JSONArray();
@@ -69,48 +69,87 @@ public class BdController {
 		Iterator<Classifying> i = col.iterator();
 		while (i.hasNext()) {
 			Classifying classifying = i.next();
-			JSONObject JSONClassifying = classifying.toJSON();			
+			JSONObject JSONClassifying = classifying.toJSON();
 			classifyingArray.put(JSONClassifying);
 		}
 		return classifyingArray;
 	}
 
-	// ------------------@RequestMapping---------------------
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(Model model) {
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(Model model) throws JSONException {
+		bdtheque = getBDtheque();
 		logger.info("Listing Bdtheque");
 		model.addAttribute("bdtheque", bdtheque);
 		return "index";
 	}
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String list(Model model) {
-		logger.info("Listing bibliBd");
-		model.addAttribute("bibliBd", bibliBd);
-		model.addAttribute("classifyingArray", classifyingArray);
-		return "list";
+
+	@RequestMapping(value = "/connexion", method = RequestMethod.GET)
+	public String connexion(Model model) {
+		return "connexion";
+	}
+
+	@RequestMapping(value = "/inscription", method = RequestMethod.GET)
+	public String addUser(Model model) {
+		return "inscription";
+	}
+
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model) throws JSONException {
+		try {
+			bibliBd = getBibliBD(getUser().getId());
+			classifyingArray = getClassifying(getUser().getId());
+			logger.info("Listing bibliBd");
+			model.addAttribute("bibliBd", bibliBd);
+			model.addAttribute("classifyingArray", classifyingArray);
+			return "list";
+		} catch (java.lang.NullPointerException ne) {
+			return "connexion";
+		}
 	}
 
 	@RequestMapping(value = "/newBd", method = RequestMethod.GET)
-	public String displayForm(Model model) {
-		logger.info("display form new bd");
-		Bd bd = new Bd();
-		model.addAttribute("bd", bd);
-		return "newBd";
+	public String newBd(Model model) {
+		try {
+			getUser().getId();
+			Bd bd = new Bd();
+			model.addAttribute("bd", bd);
+			return "newBd";
+		} catch (java.lang.NullPointerException ne) {
+			return "connexion";
+		}
 	}
 
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add(Bd bd, Model model) {
-		logger.info("add new bd " + bd.getTitle());
-		JSONObject JSONBd = new JSONObject();
+	@RequestMapping(value = "/addBd", method = RequestMethod.POST)
+	public String addBd(Bd bd, Model model) throws JSONException {
+		dao.insertBd(bd);
+		// Adding the bd in the user bibliBD
+		BdUser newBdUser = new BdUser(bd, getUser());
+		dao.insertBdUser(newBdUser);
+		return list(model);
+	}
+
+	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
+	public String addUser(String pseudo, String email, String password,
+			Model model) throws JSONException {
 		try {
-			JSONBd = bd.toJSON();
-		} catch (JSONException e) {
-			e.printStackTrace();
+			int hashPassword = password.hashCode();
+			User user = new User(null, email, pseudo, hashPassword);
+			dao.insertUser(user);
+		} catch (Exception e) {
+			return "inscription";
 		}
-		bibliBd.put(JSONBd);
-		dao.insert(bd);
-		model.addAttribute("bibliBd", bibliBd);
-		return "list";
+		return connect(pseudo, password, model);
+	}
+
+	@RequestMapping(value = "/connect", method = RequestMethod.POST)
+	public String connect(String pseudo, String password, Model model)
+			throws JSONException {
+		int hashPassword = password.hashCode();
+		Collection<User> col = dao.IsUserExist(pseudo, hashPassword);
+		Iterator<User> i = col.iterator();
+		while (i.hasNext()) {
+			setUser(i.next());
+		}
+		return list(model);
 	}
 }

@@ -25,16 +25,15 @@ public class User extends BaseUser {
 	 */
 	public User (
 		java.lang.Integer _id,
+		java.lang.String _email,
 		java.lang.String _pseudo,
-		java.lang.String _name,
-		java.lang.String _firstname) {
+		java.lang.Integer _password) {
 
 		super (
 			_id,
+			_email,
 			_pseudo,
-			_name,
-			_firstname);
+			_password);
 	}
-
 /*[CONSTRUCTOR MARKER END]*/
 }

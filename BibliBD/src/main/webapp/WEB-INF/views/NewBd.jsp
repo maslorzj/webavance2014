@@ -37,19 +37,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/bd/">Ma BibliBD</a>
+          <a class="navbar-brand" href="list">Ma BibliBD</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-            <li><a href="/bd/"> Ma BDthÃ¨que</a></li>
-            <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-            <li>          
-              <form class="navbar-form">
-                <input type="text" style="width:150px" class="input-sm form-control" placeholder="rechercher">
-                <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
-              </form>
-            </li>
+            <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span>Accueil</a></li>
+            <li><a href="list"> Ma BDthèque</a></li>
+            <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span>Ajouter une nouvelle BD</a></li>
           </ul>
         </div>
       </div>
@@ -66,16 +60,16 @@
             </div>
             <hr>
             <div class="col-sm-4 hidden-sm hidden-xs">
-                <img src="resources/img/ajout.gif" id="addImage">
+                <img src="resources/img/add.png" id="addImage">
             </div>
-            <form name="myForm" method="POST" class="form-horizontal col-sm-8" role="form">
+            <form name="myForm" method="POST" action="addBd" class="form-horizontal col-sm-8" role="form">
                 <div class="col-sm-12" id="addForm">
                     <div class="form-group">
                         <label for="id" class="col-sm-6 control-label">ISBN : 
-                            <span class="mandatoryField" ng-if="!myForm.id.$valid || !idLengthChecked">Obligatoire (10 ou 13 caractÃ¨res)</span>
+                            <span class="mandatoryField" ng-if="!myForm.id.$valid || !idLengthChecked">Obligatoire (10 ou 13 caractères)</span>
                         </label>
                         <div class="col-sm-6">
-                            <input id="id" ng-change="checkIDLength()" placeholder="combinaison de 10 Ã  13 chiffres" class="form-control" type="text" name="id" ng-model="newBd.id" required/>
+                            <input id="id" ng-change="checkIDLength()" placeholder="combinaison de 10 à 13 chiffres" class="form-control" type="text" name="id" ng-model="newBd.id" required/>
                         </div>     
                     </div>
                     <div class="form-group">
@@ -95,7 +89,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="authorFirstname" class="col-sm-6 control-label">PrÃ©nom de l'auteur : 
+                        <label for="authorFirstname" class="col-sm-6 control-label">Prénom de l'auteur : 
                             <span class="mandatoryField" ng-if="!myForm.authorFirstname.$valid">Obligatoire</span>
                         </label>
                         <div class="col-sm-6">
@@ -103,19 +97,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="illustratorName" class="col-sm-6 control-label">Nom de l'illustrateur : 
-                            <span class="mandatoryField" ng-if="!myForm.illustratorName.$valid">Obligatoire</span>
+                        <label for="illusName" class="col-sm-6 control-label">Nom de l'illustrateur : 
+                            <span class="mandatoryField" ng-if="!myForm.illusName.$valid">Obligatoire</span>
                         </label>
                         <div class="col-sm-6">
-                            <input id="illustratorName" class="form-control" name="illustratorName" type="text" ng-model="newBd.illustratorName" required/>
+                            <input id="illusName" class="form-control" name="illusName" type="text" ng-model="newBd.illusName" required/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="illustratorFirstname" class="col-sm-6 control-label">PrÃ©nom de l'illustrateur : 
-                            <span class="mandatoryField" ng-if="!myForm.illustratorFirstname.$valid">Obligatoire</span>
+                        <label for="illusFirstname" class="col-sm-6 control-label">Prénom de l'illustrateur : 
+                            <span class="mandatoryField" ng-if="!myForm.illusFirstname.$valid">Obligatoire</span>
                         </label>
                         <div class="col-sm-6">
-                            <input id="illustratorFirstname" name="illustratorFirstname" class="form-control" type="text" ng-model="newBd.illustratorFirstname" required/>
+                            <input id="illusFirstname" name="illusFirstname" class="form-control" type="text" ng-model="newBd.illusFirstname" required/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -129,17 +123,17 @@
                     <div class="form-group">
                         <label for="language" class="col-sm-6 control-label">Langue : </label>
                         <div class="col-sm-6">
-                            <input id="language" class="form-control" name="language" type="text" ng-model="newBd.language" required />
+                            <input id="language" class="form-control" name="language" type="text" ng-model="newBd.language" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="publishDate" class="col-sm-6 control-label">AnnÃ©e de publication : </label>
+                        <label for="publishDate" class="col-sm-6 control-label">Année de publication : </label>
                         <div class="col-sm-6">
-                            <input id="publishDate" name="publishDate" class="form-control" type="date" ng-model="newBd.publishDate" />
+                            <input id="publishDate" name="publishDate" class="form-control" placeholder="Ex : 1999" type="text" ng-model="newBd.publishDate" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="serie" class="col-sm-6 control-label">SÃ©rie : </label>
+                        <label for="serie" class="col-sm-6 control-label">Série : </label>
                         <div class="col-sm-6">
                             <input id="serie" name="serie" class="form-control" type="text" ng-model="newBd.serie" />
                         </div>
@@ -151,23 +145,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="colorFirstname" class="col-sm-6 control-label">PrÃ©nom du coloriste : </label>
+                        <label for="colorFirstname" class="col-sm-6 control-label">Prénom du coloriste : </label>
                         <div class="col-sm-6">
                             <input id="colorFirstname" name="colorFirstname" class="form-control" type="text" ng-model="newBd.colorFirstname" />
                         </div>
                     </div>
-                    <div class="form-group" data-trigger="fileinput">
+                    <!--<div class="form-group" data-trigger="fileinput">
                         <label for="couvPath" class="col-sm-6 control-label">Image de couverture : </label>
                         <div class="col-sm-6">
-                            <span class="btn btn-default btn-file form-control">
+                   			<span class="btn btn-default btn-file form-control">
                                 <input type="file" id="couvPath" name="couvPath" ng-model="newBd.couvPath"/>
                             </span>
-                        </div>
-                    </div>
+                    	</div>
+                    </div>-->
                     <div id="addBtns">
-                        <button class="btn btn-primary" ng-click="sendNewBD()">Envoyer</button>
-                    </div>
-                        
+                        <button class="btn btn-primary">Envoyer</button>
+                    </div>                        
                 </div>
                 <div ng-if="ajaxError"><span>{{ajaxError}}</span></div>
             </form>
@@ -178,7 +171,7 @@
     <!-- Footer -->
     <footer class="footer" role="footer">
       <div class="container">
-          <p>Â© 2014 Emerald Enterprise</p>
+          <p>© 2014 Emerald Enterprise</p>
       </div>
     </footer>
     <!-- /Footer -->

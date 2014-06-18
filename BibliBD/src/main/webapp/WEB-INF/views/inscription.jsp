@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="fr" ng-app="myApp">
   <head>
@@ -32,19 +34,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
+              <a class="navbar-brand" href="list">Ma BibliBD</a>
             </div>
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                <li><a href="/bd/"> Ma BDthèque</a></li>
-                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                <li>          
-                  <form class="navbar-form">
-                    <input type="text" style="width:150px" class="input-sm form-control" placeholder="rechercher">
-                    <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
-                  </form>
-                </li>
+                <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span>Accueil</a></li>
+                <li><a href="list">Ma BDthèque</a></li>
+                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span>Ajouter une nouvelle BD</a></li>
               </ul>
             </div>
           </div>
@@ -61,9 +57,9 @@
                 </div>
                 <hr>
                 <div class="col-sm-4 hidden-sm hidden-xs">
-                    <img src="resources/img/inscription.jpg" id="inscriptionImage">
+                    <img src="resources/img/subscribe.png" id="inscriptionImage">
                 </div>
-                <form name="inscForm" method="POST" class="form-horizontal col-sm-8" role="form">
+                <form name="inscForm" method="POST" action="addUser" class="form-horizontal col-sm-8" role="form">
                     <div class="col-sm-12" id="inscriptionForm">
                         <div class="form-group">
                             <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
@@ -95,8 +91,8 @@
                     <p class="mandatoryField" id="allMandatory">Tous les champs sont obligatoires</p>
                     <div class="mandatoryField" ng-if="ajaxError"><span>{{ajaxError}}</span></div>
                     <div class="row" id="inscriptionBtnRow">
-                        <button  id="inscriptionBtn" class="btn btn-primary" ng-click="sendNewUser()">
-                            je veux m'inscrire <span class="glyphicon glyphicon-ok-circle"></span>
+                        <button id="inscriptionBtn" class="btn btn-primary" ng-click="sendNewUser()">
+                            Je veux m'inscrire <span class="glyphicon glyphicon-ok-circle"></span>
                         </button>
                     </div>
                 </form>

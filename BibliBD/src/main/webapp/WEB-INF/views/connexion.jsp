@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -29,19 +31,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
+              <a class="navbar-brand" href="list">Ma BibliBD</a>
             </div>
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                <li><a href="/bd/"> Ma BDthèque</a></li>
-                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                <li>          
-                  <form class="navbar-form">
-                    <input type="text" style="width:150px" class="input-sm form-control" placeholder="rechercher">
-                    <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
-                  </form>
-                </li>
+                <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span>Accueil</a></li>
+                <li><a href="list">Ma BDthèque</a></li>
+                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span>Ajouter une nouvelle BD</a></li>
               </ul>
             </div>
           </div>
@@ -53,10 +49,43 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4"></div>
-                    <div class="col-sm-4"><h1>Connection</h1></div>
+                    <div class="col-sm-4"><h1>Connexion</h1></div>
                     <div class="col-sm-4"></div>
                 </div>
                 <hr>
+<<<<<<< HEAD:BibliBD/src/main/webapp/WEB-INF/views/connexion.jsp
+                <div class="col-sm-4 hidden-sm hidden-xs">
+                    <img src="resources/img/subscribe.png" id="connectionImage">
+                </div>
+                <form name="coForm" method="POST" action="connect" class="form-horizontal col-sm-8" role="form">
+                    <div class="col-sm-12" id="connectionForm">
+                        <div class="form-group">
+                            <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
+                            <div class="col-sm-6">
+                                <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" required />
+                            </div>     
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-6 control-label">Mot de passe : </label>
+                            <div class="col-sm-6">
+                                <input id="password" class="form-control" type="password" name="password" required />
+                            </div>     
+                        </div>
+                    </div>
+                    <p class="mandatoryField" id="allMandatory">Tous les champs sont obligatoires</p>
+                    <div class="row" id="connectionBtnRow">
+	                    <button  id="connectionBtn" class="btn btn-primary">
+	                        Connexion <span class="glyphicon glyphicon-ok-circle"></span>
+	                    </button>
+                    </div>
+                </form>
+                <div class="row" id="inscriptionBtnRow">
+                    <a href="inscription">
+                        <button  id="inscriptionBtn" class="btn btn-primary">
+                            Je veux m'inscrire <span class="glyphicon glyphicon-ok-circle"></span>
+                        </button>
+                    </a>
+=======
                 <div class="row">
                     <section class="col-md-4 hidden-sm hidden-xs" id="inscriptionLink">
                         <div class="col-md-4">                            
@@ -103,6 +132,7 @@
                             </div>
                         </form>
                     </section>
+>>>>>>> origin/master:BibliBD/src/main/webapp/WEB-INF/views/connection.jsp
                 </div>
             </div>
         </div>

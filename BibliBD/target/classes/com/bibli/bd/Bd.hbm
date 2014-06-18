@@ -10,7 +10,7 @@
 	>
 		<id
 			name="Id"
-			type="string"
+			type="java.lang.Long"
 			column="id"
 		>
 			<generator class="vm"/>
@@ -83,7 +83,7 @@
 			name="Language"
 			column="language"
 			type="string"
-			not-null="true"
+			not-null="false"
 			length="255"
 		/>
 		<property
@@ -96,8 +96,8 @@
 		<property
 			name="PublishDate"
 			column="publishDate"
-			type="date"
-			not-null="true"
+			type="integer"
+			not-null="false"
 			length="10"
 		/>
 

@@ -38,7 +38,7 @@ public abstract class BaseBd  implements Serializable {
 	private int hashCode = Integer.MIN_VALUE;
 
 	// primary key
-	private java.lang.String _id;
+	private java.lang.Long _id;
 
 	// fields
 	private java.lang.String _serie;
@@ -52,7 +52,7 @@ public abstract class BaseBd  implements Serializable {
 	private java.lang.String _illusFirstname;
 	private java.lang.String _language;
 	private java.lang.String _illusName;
-	private java.util.Date _publishDate;
+	private java.lang.Integer _publishDate;
 
 
 	// constructors
@@ -63,7 +63,7 @@ public abstract class BaseBd  implements Serializable {
 	/**
 	 * Constructor for primary key
 	 */
-	public BaseBd (java.lang.String _id) {
+	public BaseBd (java.lang.Long _id) {
 		this.setId(_id);
 		initialize();
 	}
@@ -72,16 +72,14 @@ public abstract class BaseBd  implements Serializable {
 	 * Constructor for required fields
 	 */
 	public BaseBd (
-		java.lang.String _id,
+		java.lang.Long _id,
 		java.lang.String _editor,
 		java.lang.String _title,
 		java.lang.String _couvPath,
 		java.lang.String _authorName,
 		java.lang.String _authorFirstname,
 		java.lang.String _illusFirstname,
-		java.lang.String _language,
-		java.lang.String _illusName,
-		java.util.Date _publishDate) {
+		java.lang.String _illusName) {
 
 		this.setId(_id);
 		this.setEditor(_editor);
@@ -90,9 +88,7 @@ public abstract class BaseBd  implements Serializable {
 		this.setAuthorName(_authorName);
 		this.setAuthorFirstname(_authorFirstname);
 		this.setIllusFirstname(_illusFirstname);
-		this.setLanguage(_language);
 		this.setIllusName(_illusName);
-		this.setPublishDate(_publishDate);
 		initialize();
 	}
 
@@ -106,7 +102,7 @@ public abstract class BaseBd  implements Serializable {
      *  generator-class="vm"
      *  column="id"
      */
-	public java.lang.String getId () {
+	public java.lang.Long getId () {
 		return _id;
 	}
 
@@ -114,7 +110,7 @@ public abstract class BaseBd  implements Serializable {
 	 * Set the unique identifier of this class
 	 * @param _id the new ID
 	 */
-	public void setId (java.lang.String _id) {
+	public void setId (java.lang.Long _id) {
 		this._id = _id;
 		this.hashCode = Integer.MIN_VALUE;
 	}
@@ -299,7 +295,7 @@ public abstract class BaseBd  implements Serializable {
 	/**
 	 * Return the value associated with the column: publishDate
 	 */
-	public java.util.Date getPublishDate () {
+	public java.lang.Integer getPublishDate () {
 		return _publishDate;
 	}
 
@@ -307,7 +303,7 @@ public abstract class BaseBd  implements Serializable {
 	 * Set the value related to the column: publishDate
 	 * @param _publishDate the publishDate value
 	 */
-	public void setPublishDate (java.util.Date _publishDate) {
+	public void setPublishDate (java.lang.Integer _publishDate) {
 		this._publishDate = _publishDate;
 	}
 
