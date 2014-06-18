@@ -53,39 +53,6 @@
                     <div class="col-sm-4"></div>
                 </div>
                 <hr>
-<<<<<<< HEAD:BibliBD/src/main/webapp/WEB-INF/views/connexion.jsp
-                <div class="col-sm-4 hidden-sm hidden-xs">
-                    <img src="resources/img/subscribe.png" id="connectionImage">
-                </div>
-                <form name="coForm" method="POST" action="connect" class="form-horizontal col-sm-8" role="form">
-                    <div class="col-sm-12" id="connectionForm">
-                        <div class="form-group">
-                            <label for="pseudo" class="col-sm-6 control-label">Pseudo : </label>
-                            <div class="col-sm-6">
-                                <input id="pseudo" placeholder="Votre pseudo" class="form-control" type="text" name="pseudo" required />
-                            </div>     
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-sm-6 control-label">Mot de passe : </label>
-                            <div class="col-sm-6">
-                                <input id="password" class="form-control" type="password" name="password" required />
-                            </div>     
-                        </div>
-                    </div>
-                    <p class="mandatoryField" id="allMandatory">Tous les champs sont obligatoires</p>
-                    <div class="row" id="connectionBtnRow">
-	                    <button  id="connectionBtn" class="btn btn-primary">
-	                        Connexion <span class="glyphicon glyphicon-ok-circle"></span>
-	                    </button>
-                    </div>
-                </form>
-                <div class="row" id="inscriptionBtnRow">
-                    <a href="inscription">
-                        <button  id="inscriptionBtn" class="btn btn-primary">
-                            Je veux m'inscrire <span class="glyphicon glyphicon-ok-circle"></span>
-                        </button>
-                    </a>
-=======
                 <div class="row">
                     <section class="col-md-4 hidden-sm hidden-xs" id="inscriptionLink">
                         <div class="col-md-4">                            
@@ -132,7 +99,6 @@
                             </div>
                         </form>
                     </section>
->>>>>>> origin/master:BibliBD/src/main/webapp/WEB-INF/views/connection.jsp
                 </div>
             </div>
         </div>
