@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
-        <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
+        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../../resources/css/bd.css" rel="stylesheet">
+        <link href="resources/css/bd.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                        <li><a href="#">Ma BDthèque</a></li>
+                        <li><a href="#"> Ma BDthèque</a></li>
                         <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
                         <li>          
                             <form class="navbar-form">
@@ -70,11 +70,26 @@
                 <hr>
                 <div class="row">
                     <section class="col-md-6">
-                        <img src="../../resources/img/couv/default.png">
-                        <p>ici imaaaaaaaaaaaaaaaaaage</p>
+                        <!-- if no image use default image -->
+                        <img src="resources/img/couv/default.png">
                     </section>
-                    <section class="col-md-6">
-                        <p>isbn, titre, série, nom prénom auteur, nom prénom illustrateur, nom rénom coloriste, éditeur, langue, année de publication</p>
+                    <section class="col-md-6" id="infoBD">
+                        <label for="dateDisplay" class="col-sm-6 control-label">Date de publication:</label>
+                        <p id="dateDisplay">--date--</p>
+                        <label for="autorDisplay" class="col-sm-6 control-label">Auteur:*</label>
+                        <p id="autorDisplay">--Nom auteur-- --Prénom auteur--</p>
+                        <label for="illDisplay" class="col-sm-6 control-label">Illustrateur:*</label>
+                        <p id="illDisplay">--Nom illustrateur-- --Prénom illustrateur--</p>
+                        <label for="colorDisplay" class="col-sm-6 control-label">Coloriste:</label>
+                        <p id="colorDisplay">--Nom coloriste-- --Prénom coloriste--</p>
+                        <label for="serieDisplay" class="col-sm-6 control-label">Série:</label>
+                        <p id="serieDisplay">--série--</p>
+                        <label for="editorDisplay" class="col-sm-6 control-label">Editeur:*</label>
+                        <p id="editorDisplay">--éditeur--</p>
+                        <label for="langageDisplay" class="col-sm-6 control-label">Langue:</label>
+                        <p id="langageDisplay">--langue--</p>
+                        <label for="isbnDisplay" class="col-sm-6 control-label">ISBN:*</label>
+                        <p id="isbnDisplay">--isbn--</p>
                     </section>
                 </div>
             </div>
@@ -91,6 +106,6 @@
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

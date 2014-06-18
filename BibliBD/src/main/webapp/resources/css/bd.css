@@ -111,3 +111,15 @@ body {
   margin: 0px auto -55px;
 }
 
+#infoBD{
+  background-color:#E4EFFF;
+  border:1px solid #9FC6FF;
+  padding-top:5%;
+  padding-bottom:4%;
+  padding-left: 3%;
+  padding-right: 3%;
+/*arrondir les coins en haut à gauche et en bas à droite*/
+  -moz-border-radius:10px 0;
+  -webkit-border-radius:10px 0;
+  border-radius:10px 0;
+}

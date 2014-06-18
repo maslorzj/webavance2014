@@ -159,9 +159,25 @@
                     <div class="form-group" data-trigger="fileinput">
                         <label for="couvPath" class="col-sm-6 control-label">Image de couverture : </label>
                         <div class="col-sm-6">
-                            <span class="btn btn-default btn-file">
-                                Browse <input id="couvPath" name="couvPath" type="file" ng-model="newBd.couvPath" />
-                            </span>         
+
+
+            <div class="input-group image-preview">
+                <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                <span class="input-group-btn">
+                    <!-- image-preview-clear button -->
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                        <span class="glyphicon glyphicon-remove"></span> Clear
+                    </button>
+                    <!-- image-preview-input -->
+                    <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title">Browse</span>
+                        <input type="file" accept="image/png, image/jpeg, image/gif" id="couvPath" name="couvPath" type="file" ng-model="newBd.couvPath"/> <!-- rename it -->
+                    </div>
+                </span>
+            </div>       
+
+            
                         </div>
                     </div>
                     <div id="addBtns">
