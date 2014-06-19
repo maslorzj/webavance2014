@@ -9,21 +9,21 @@
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
         <script>/*var bds = ${bdtheque};*/</script>
-        <script src="../../resources/js/angular.min.js"></script>
-        <script src="../../resources/js/module/module.js"></script>
-        <script src="../../resources/js/controller/indexController.js"></script>
-        <script src="../../resources/js/service/bibliBdService.js"></script>
+        <script src="resources/js/angular.min.js"></script>
+        <script src="resources/js/module/module.js"></script>
+        <script src="resources/js/controller/indexController.js"></script>
+        <script src="resources/js/service/bibliBdService.js"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
-        <script type="text/javascript" src="../../resources/js/app_car.js"></script>
-        <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
+        <script type="text/javascript" src="resources/js/app_car.js"></script>
+        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
     
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../../resources/css/bd.css" rel="stylesheet">
+        <link href="resources/css/bd.css" rel="stylesheet">
     </head>
 
     <body>
@@ -74,12 +74,12 @@
                         </div>
                     </div>  
                 </div> -->
-                <div class="container marketing" ng-controller="IndexController" ng-cloack>
-                    <div class ="col-xs-offset-2">
+                <div class="container marketing" id="photoContainer" ng-controller="IndexController" ng-cloack>
+                    <div>
                         <div ng-repeat="bd in bds| filter:search | orderBy:filterOrders">
-                            <a ng-href="pageBd&id={{bd.id}}">
-                                <div class="col-xs-3">
-                                    <ul class="pic">
+                            <div class="col-xs-3">
+                                <ul class="pic">
+                                    <a ng-href="pageBd&id={{bd.id}}">
                                         <li>
                                             <img class="photos photosSize" ng-src="{{bd.couvPath}}" alt=""/>
                                             <div class="text">
@@ -90,9 +90,9 @@
                                                 </div>
                                             </div>
                                         </li>
-                                    </ul>
-                                </div>
-                            </a>
+                                    </a>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
         <!-- /Footer -->
 
         <!-- Bootstrap core JavaScript -->
-        <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
