@@ -186,6 +186,18 @@ body {
   color: #FFFFFF;
 }
 
+/*css de la page d'une bd */
+
+#pageBd #bdIsNotInBibliBD{
+  padding-top: 3%;
+  padding-left: 35%;
+}
+
+#pageBd #bdIsInBibliBD{
+  padding-top: 3%;
+  padding-left: 30%;
+}
+
 /*css de la bibliBD */
 
 #displayBibliBD ul.pic {

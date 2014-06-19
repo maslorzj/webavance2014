@@ -101,22 +101,27 @@
                         </div>
                     </section>
                 </div>
+                <div class="row">
+                    <section class="col-md-6"></section>
+                    <section class="col-md-6">
+                        <div id="bdIsNotInBibliBD" ng-if="!PageBdService.isInBibliBd">
+                            <button class="btn btn-primary">
+                                <a class="changeLinkColor" ng-href="addToBibiliBd&id={{PageBdService.bd.id}}">
+                                    <span class="glyphicon glyphicon-plus-sign"></span> Ajouter à la bibliBD
+                                </a>
+                            </button>
+                        </div>
+                        <div id="bdIsInBibliBD" ng-if="PageBdService.isInBibliBd">
+                            <p>Cette Bd est dans votre bibliBD</p>
+                            <button class="btn btn-primary">
+                                <a class="changeLinkColor" ng-href="delFromBibiliBd&id={{PageBdService.bd.id}}">
+                                    <span class="glyphicon glyphicon-minus-sign"></span> Supprimer de la bibliBD
+                                </a>
+                            </button>
+                        </div>
+                    </section>
+                </div>
             </div>
-        </div>
-        <div id="bdIsNotInBibliBD" ng-if="!PageBdService.isInBibliBd">
-            <button class="btn btn-primary">
-                <a class="changeLinkColor" ng-href="addToBibiliBd&id={{PageBdService.bd.id}}">
-                    <span class="glyphicon glyphicon-plus-sign"></span> Ajouter à la bibliBD
-                </a>
-            </button>
-        </div>
-        <div id="bdIsInBibliBD" ng-if="PageBdService.isInBibliBd">
-            <p>Cette Bd est dans votre bibliBD</p>
-            <button class="btn btn-primary">
-            <a class="changeLinkColor" ng-href="delFromBibiliBd&id={{PageBdService.bd.id}}">
-                <span class="glyphicon glyphicon-minus-sign"></span> Supprimer de la bibliBD
-            </a>
-            </button>
         </div>
         <!-- /Main -->
 
