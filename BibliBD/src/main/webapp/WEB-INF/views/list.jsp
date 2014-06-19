@@ -125,7 +125,7 @@
                                     <ul class="pic">
                                         <li>
                                             <a href="#"><!-- lien vers la page de la Bd -->
-                                                <img class="photos" src="images\default.png" width="115" height="160" alt=""/>
+                                                <img class="photos photosSize" src="images\default.png" alt=""/>
                                                 <div class="text">
                                                     <div>
                                                         <p>Titre : {{bd.title}}</p>

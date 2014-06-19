@@ -259,6 +259,10 @@ div.text {
   padding-bottom: 3%;
 }
 
+.photosSize {
+  width: 150px;
+  heigth: 200px;
+}
 /*css du carousel de la page d'accueil */
 
 #accueil #slides_control > div{

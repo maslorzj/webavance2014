@@ -1,4 +1,4 @@
-myApp.controller('BibliBdController', ['$scope', '$http', 'BibliBdService', function($scope, $http, BibliBdService){
+myApp.controller('BibliBdController', ['$scope', 'BibliBdService', function($scope, BibliBdService){
 
 	// Initialize all variables
 	$scope.initController = function() {
