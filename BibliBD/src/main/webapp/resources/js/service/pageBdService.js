@@ -8,8 +8,12 @@ myApp.service('PageBdService', function(){
 			authorFirstame:"authorFirstName",
 			illusName:"illusName",
 			illusFirstname:"illusFirstName",
+			colorName:"colorName",
+			colorFirstname:"colorFirstname",
 			language:'French',
-			publishDate:'On verra après'}
-		);
+			publishDate:'On verra après',
+			couvPath:"../../resources/img/couv/default.png",
+			serie:"La mère de ta soeur"
 	};
+	console.log(this.bd);
 });

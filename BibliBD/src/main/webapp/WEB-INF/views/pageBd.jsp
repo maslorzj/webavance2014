@@ -6,20 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
-        <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd/{{id}} -->
+        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd&id={{id}} -->
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../../resources/css/bd.css" rel="stylesheet">
+        <link href="resources/css/bd.css" rel="stylesheet">
 
         <script>var bd = "";</script>
-        <script src="../../resources/js/angular.min.js"></script>
-        <script src="../../resources/js/module/module.js"></script>
-        <script src="../../resources/js/controller/pageBdController.js"></script>
-        <script src="../../resources/js/service/pageBdService.js"></script>
+        <script src="resources/js/angular.min.js"></script>
+        <script src="resources/js/module/module.js"></script>
+        <script src="resources/js/controller/pageBdController.js"></script>
+        <script src="resources/js/service/pageBdService.js"></script>
     </head>
 
     <body ng-controller="PageBdController">
@@ -60,7 +60,7 @@
         <!-- /Header -->
 
         <!-- Main -->
-        <div class="main" id="pageBd">
+        <div class="main" id="pageBd" ng-cloak>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4"></div>
@@ -71,25 +71,41 @@
                 <div class="row">
                     <section class="col-md-6">
                         <!-- if no image use default image -->
-                        <img src="../../resources/img/couv/default.png">
+                        <img ng-src="{{PageBdService.bd.couvPath}}">
                     </section>
                     <section class="col-md-6" id="infoBD">
-                        <label for="dateDisplay" class="col-sm-6 control-label">Date de publication:</label>
-                        <p id="dateDisplay">--date--</p>
-                        <label for="autorDisplay" class="col-sm-6 control-label">Auteur:*</label>
-                        <p id="autorDisplay">--Nom auteur-- --Prénom auteur--</p>
-                        <label for="illDisplay" class="col-sm-6 control-label">Illustrateur:*</label>
-                        <p id="illDisplay">--Nom illustrateur-- --Prénom illustrateur--</p>
-                        <label for="colorDisplay" class="col-sm-6 control-label">Coloriste:</label>
-                        <p id="colorDisplay">--Nom coloriste-- --Prénom coloriste--</p>
-                        <label for="serieDisplay" class="col-sm-6 control-label">Série:</label>
-                        <p id="serieDisplay">--série--</p>
-                        <label for="editorDisplay" class="col-sm-6 control-label">Editeur:*</label>
-                        <p id="editorDisplay">--éditeur--</p>
-                        <label for="langageDisplay" class="col-sm-6 control-label">Langue:</label>
-                        <p id="langageDisplay">--langue--</p>
-                        <label for="isbnDisplay" class="col-sm-6 control-label">ISBN:*</label>
-                        <p id="isbnDisplay">--isbn--</p>
+                        <div>
+                            <label for="dateDisplay" class="col-sm-6 control-label">Date de publication:</label>
+                            <p id="dateDisplay">{{PageBdService.bd.publishDate}}</p>
+                        </div>
+                        <div>
+                            <label for="autorDisplay" class="col-sm-6 control-label">Auteur:</label>
+                            <p id="autorDisplay">{{PageBdService.bd.authorName}} {{PageBdService.bd.authorFirstname}}</p>
+                        </div>
+                        <div>
+                            <label for="illDisplay" class="col-sm-6 control-label">Illustrateur:</label>
+                            <p id="illDisplay">{{PageBdService.bd.illusName}} {{PageBdService.bd.illusFirstname}}</p>
+                        </div>
+                        <div ng-if="PageBdService.bd.colorName || PageBdService.bd.colorFirstname">
+                            <label for="colorDisplay" class="col-sm-6 control-label">Coloriste:</label>
+                            <p id="colorDisplay">{{PageBdService.bd.colorName}} {{PageBdService.bd.colorFirstname}}</p>
+                        </div>
+                        <div ng-if="PageBdService.bd.serie">
+                            <label for="serieDisplay" class="col-sm-6 control-label">Série:</label>
+                            <p id="serieDisplay">{{PageBdService.bd.serie}}</p>
+                        </div>
+                        <div>
+                            <label for="editorDisplay" class="col-sm-6 control-label">Editeur:</label>
+                            <p id="editorDisplay">{{PageBdService.bd.editor}}</p>
+                        </div>
+                        <div ng-if="PageBdService.bd.serie">
+                            <label for="langageDisplay" class="col-sm-6 control-label">Langue:</label>
+                            <p id="langageDisplay">{{PageBdService.bd.language}}</p>
+                        </div>
+                        <div>
+                            <label for="isbnDisplay" class="col-sm-6 control-label">ISBN:</label>
+                            <p id="isbnDisplay">{{PageBdService.bd.id}}</p>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -106,6 +122,6 @@
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
