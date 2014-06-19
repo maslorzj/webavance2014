@@ -15,5 +15,5 @@ myApp.service('PageBdService', function(){
 			couvPath:"../../resources/img/couv/default.png",
 			serie:"La mère de ta soeur"
 	};
-	console.log(this.bd);
+	this.isInBibliBd = isInBibliBd;
 });

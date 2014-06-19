@@ -6,23 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
-        <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd&id={{id}} -->
+        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd&id={{id}} -->
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../../resources/css/bd.css" rel="stylesheet">
+        <link href="resources/css/bd.css" rel="stylesheet">
 
         <script>
-            var bd = "";
-            var isInBibliBd = true;
+            var bd = JSON.parse(${bd});
+            var isInBibliBd = ${isInBibliBd};
         </script>
-        <script src="../../resources/js/angular.min.js"></script>
-        <script src="../../resources/js/module/module.js"></script>
-        <script src="../../resources/js/controller/pageBdController.js"></script>
-        <script src="../../resources/js/service/pageBdService.js"></script>
+        <script src="resources/js/angular.min.js"></script>
+        <script src="resources/js/module/module.js"></script>
+        <script src="resources/js/controller/pageBdController.js"></script>
+        <script src="resources/js/service/pageBdService.js"></script>
     </head>
 
     <body ng-controller="PageBdController">
@@ -113,6 +113,8 @@
                 </div>
             </div>
         </div>
+        <a ng-if="!PageBdService.isInBibliBd" ng-href="addToBibiliBd&id={{PageBdService.bd.id}}">Ajouter à la bibliBD</a>
+        <a ng-if="PageBdService.isInBibliBd" ng-href="delFromBibiliBd&id={{PageBdService.bd.id}}">Supprimer de la bibliBD</a>
         <!-- /Main -->
 
         <!-- Footer -->
@@ -125,6 +127,6 @@
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
