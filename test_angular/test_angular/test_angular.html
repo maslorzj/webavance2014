@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="nomApp">
+<head>
+  <title>Titre</title>
+  <script src="angular.js"></script>
+  <script src="test.js"></script>
+</head>
+<body ng-controller="TestController">
+	<input type="text" ng-model="jambon" />
+	<div ng-click="functionAlert()">
+		<p>{{jambon}}</p>
+	</div>
+
+	<button ng-click="chiliSpicy()">Reset</button>
+
+</body>
+</html>

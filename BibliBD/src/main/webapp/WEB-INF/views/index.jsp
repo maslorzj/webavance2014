@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Advanced Web Project">
     <meta name="author" content="EmeraldEnterprise">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/app_car.js"></script>
     <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
     
     <title>Ma BibliBD</title>
@@ -53,6 +56,21 @@
           <div class="container">
             <div class="carousel slide">  
               <p>un carousel</p>
+              <div class="ng-scope" ng-app="app_car">
+                <div ng-controller="CarouselDemoCtrl" id="slides_control">
+                  <div>
+                    <carousel interval="myInterval">
+                    <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}">
+                      <div class="carousel-caption">
+                        <h4>Slide {{$index+1}}</h4>
+                     </div>
+                    </slide>
+                    </carousel>
+                  </div>
+                </div>
+              </div>  
+
             </div>
           <div class="container marketing">
             <div class="row">

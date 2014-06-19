@@ -149,3 +149,21 @@ body {
   padding-top: 5%;
   padding-left: 58%;
 }
+
+/*css du carousel de la page d'accueil */
+
+#accueil #slides_control > div{
+  height: 340px;
+}
+#accueil img{
+  margin:auto;
+  width: auto;
+  height: 300px;
+}
+#accueil #slides_control {
+  position:relative;
+  width: 200px;
+  /*left:50%;*/
+  top:20px;
+  /*margin-left:-200px;*/
+}
