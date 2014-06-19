@@ -101,6 +101,8 @@ body {
   min-height: 100%;
   height: auto !important;
   margin: 0px auto -55px;
+  padding-bottom: 4%;
+  padding-top: 1%;
 }
 
 #pageBd{
@@ -134,7 +136,7 @@ body {
   padding-bottom: 15%;
   padding-right: 15%;
   padding-left: 6%;
-  background-image: url(../../resources/img/connection1.png);
+  background-image: url(resources/img/connection1.png);
   background-repeat: no-repeat;
 }
 
@@ -182,14 +184,14 @@ body {
 
 /*css de la bibliBD */
 
-ul.pic {
+#displayBibliBD ul.pic {
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-ul.pic li {
+#displayBibliBD ul.pic li {
   display: inline-block;
   height: 180px;
   margin: 0 1em 1em 0;
@@ -197,7 +199,7 @@ ul.pic li {
   width: 150px;
 }
 
-div.text {
+#displayBibliBD div.text {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
@@ -209,13 +211,13 @@ div.text {
   width: 150px;
 }
 
-div.text div {
+#displayBibliBD div.text div {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
 
-div.text {
+#displayBibliBD div.text {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
@@ -228,11 +230,11 @@ div.text {
   opacity: 0;
 }
 
-ul.pic li:hover div.text {
+#displayBibliBD ul.pic li:hover div.text {
   opacity: 1;
 }
 
-div.text {
+#displayBibliBD div.text {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
@@ -249,18 +251,18 @@ div.text {
   transition: opacity 500ms;
 }
 
-#orderTitle{
+#displayBibliBD #orderTitle{
   padding-top: 2%;
   padding-left: 1.5%;
   padding-bottom: 1%;
 }
 
-#returnBtn{
+#displayBibliBD #returnBtn{
   padding-left: 1.5%;
   padding-bottom: 3%;
 }
 
-.photosSize {
+#displayBibliBD .photosSize {
   width: 150px;
   height: 200px;
 }
@@ -284,22 +286,21 @@ div.text {
 
 /*css du reste de la page d'accueil */
 
-ul.pic {
+#accueil ul.pic {
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-ul.pic li {
+#accueil ul.pic li {
   display: inline-block;
-  height: 180px;
   margin: 0 1em 1em 0;
   position: relative;
   width: 150px;
 }
 
-div.text {
+#accueil div.text {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
@@ -311,13 +312,13 @@ div.text {
   width: 150px;
 }
 
-div.text div {
+#accueil div.text div {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
 
-div.text {
+#accueil div.text {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
@@ -330,11 +331,11 @@ div.text {
   opacity: 0;
 }
 
-ul.pic li:hover div.text {
+#accueil ul.pic li:hover div.text {
   opacity: 1;
 }
 
-div.text {
+#accueil div.text {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
@@ -351,18 +352,22 @@ div.text {
   transition: opacity 500ms;
 }
 
-#orderTitle{
+#accueil #orderTitle{
   padding-top: 2%;
   padding-left: 1.5%;
   padding-bottom: 1%;
 }
 
-#returnBtn{
+#accueil #returnBtn{
   padding-left: 1.5%;
   padding-bottom: 3%;
 }
 
-.photosSize {
+#accueil .photosSize {
   width: 150px;
-  height: 200px;
+  height: 180px;
+}
+
+#accueil #photoContainer{
+  padding-top: 3%;
 }
