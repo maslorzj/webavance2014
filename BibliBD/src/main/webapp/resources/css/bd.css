@@ -32,15 +32,6 @@ body {
   z-index: 1030;
 }
 
-.footer {
-  margin-top: 25px;
-  position: static;
-  background: none repeat scroll 0% 0% rgb(30, 30, 30);
-  color: rgb(255, 255, 255);
-  text-align: left;
-  width: 100%;
-}
-
 .addBdForm{
   text-align: center;
 }
@@ -49,6 +40,19 @@ body {
   color:#B20000;
 }
 
+/* css du footer */
+.footer {
+  margin-top: 25px;
+  position: static;
+  background: none repeat scroll 0% 0% rgb(30, 30, 30);
+  color: rgb(255, 255, 255);
+  text-align: left;
+  width: 100%;
+}
+/* fin css du footer */
+
+
+/*css ajout bd */
 #addForm .form-group{
   padding-right: 5%;
 }
@@ -60,6 +64,16 @@ body {
 
 #addBtns{
   padding-left: 40%;
+}
+/*fin css ajout bd */
+
+
+/*css inscription */
+
+#inscription{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
 }
 
 #inscriptionForm .form-group{
@@ -80,54 +94,25 @@ body {
   padding-left: 42%;
 }
 
+#acceptCond{
+  padding-left: 22%;
+  padding-top: 2%;
+}
+
 #allMandatory{
   padding-top: 1.5%;
   padding-left: 35%;
 }
 
-#inscription{
-  min-height: 100%;
-  height: auto !important;
-  margin: 0px auto -55px;
-}
+/*fin css inscription */
+
+
+/*css connexion */
 
 #connection{
   min-height: 100%;
   height: auto !important;
   margin: 0px auto -55px;
-}
-
-#accueil{
-  min-height: 100%;
-  height: auto !important;
-  margin: 0px auto -55px;
-  padding-bottom: 4%;
-  padding-top: 1%;
-}
-
-#pageBd{
-  min-height: 100%;
-  height: auto !important;
-  margin: 0px auto -55px;
-  padding-bottom: 4%;
-}
-
-#displayBibliBD{
-  min-height: 100%;
-  height: auto !important;
-  margin: 0px auto -55px;
-}
-
-#infoBD{
-  background-color:#E4EFFF;
-  border:1px solid #9FC6FF;
-  padding-top:5%;
-  padding-bottom:4%;
-  padding-left: 3%;
-  padding-right: 3%;
-  -moz-border-radius:10px 0;
-  -webkit-border-radius:10px 0;
-  border-radius:10px 0;
 }
 
 #inscriptionLink{
@@ -138,6 +123,11 @@ body {
   padding-left: 6%;
   background-image: url(resources/img/connection1.png);
   background-repeat: no-repeat;
+}
+
+#connectionBtnRow{
+  padding-top: 5%;
+  padding-left: 58%;
 }
 
 #connection2Image{
@@ -172,21 +162,17 @@ body {
   border-radius:10px 10px;
 }
 
-#connectionBtnRow{
-  padding-top: 5%;
-  padding-left: 58%;
-}
+/*fin css connexion */
 
-#acceptCond{
-  padding-left: 22%;
-  padding-top: 2%;
-}
-
-.changeLinkColor{
-  color: #FFFFFF;
-}
 
 /*css de la page d'une bd */
+
+#pageBd{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
+  padding-bottom: 4%;
+}
 
 #pageBd #bdIsNotInBibliBD{
   padding-top: 3%;
@@ -198,7 +184,31 @@ body {
   padding-left: 30%;
 }
 
+#pageBd #infoBD{
+  background-color:#E4EFFF;
+  border:1px solid #9FC6FF;
+  padding-top:5%;
+  padding-bottom:4%;
+  padding-left: 3%;
+  padding-right: 3%;
+  -moz-border-radius:10px 0;
+  -webkit-border-radius:10px 0;
+  border-radius:10px 0;
+}
+
+#pageBd .changeLinkColor{
+  color: #FFFFFF;
+}
+/* fin css de la page d'une bd */
+
+
 /*css de la bibliBD */
+
+#displayBibliBD{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
+}
 
 #displayBibliBD ul.pic {
   list-style-type: none;
@@ -282,6 +292,19 @@ body {
   width: 150px;
   height: 200px;
 }
+/* fin css de la bibliBD */
+
+
+/*css de l'accueil */
+
+#accueil{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
+  padding-bottom: 4%;
+  padding-top: 1%;
+}
+
 /*css du carousel de la page d'accueil */
 
 #accueil #slides_control > div{
@@ -387,3 +410,4 @@ body {
 #accueil #photoContainer{
   padding-top: 3%;
 }
+/* fin css de l'accueil */
