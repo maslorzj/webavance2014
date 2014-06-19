@@ -119,25 +119,25 @@
                     </div>
                     <!-- partie du milieu -->
                     <div class ="col-xs-offset-2">
-                        <div ng-repeat="bd in bds| filter:search | orderBy:filterOrders" 
-                             ng-click="nextOrder(bd[filterOrders[currentOrder]]);"  >
-
-                            <div class="col-xs-3">
-                                <ul class="pic">
-                                    <li>
-                                        <a href="#"><!-- lien vers la page de la Bd -->
-                                            <img class="photos" src="images\default.png" width="115" height="160" alt=""/>
-                                            <div class="text">
-                                                <div>
-                                                    <p>Titre : {{bd.title}}</p>
-                                                    <p>Editeur : {{bd.editor}}</p>
-                                                    <p>Nom de l'auteur : {{bd.authorFirstname}} {{bd.authorName}}</p>
+                        <div ng-repeat="bd in bds| filter:search | orderBy:filterOrders">
+                            <a ng-href="pageBd&id={{bd.id}}">
+                                <div class="col-xs-3">
+                                    <ul class="pic">
+                                        <li>
+                                            <a href="#"><!-- lien vers la page de la Bd -->
+                                                <img class="photos" src="images\default.png" width="115" height="160" alt=""/>
+                                                <div class="text">
+                                                    <div>
+                                                        <p>Titre : {{bd.title}}</p>
+                                                        <p>Editeur : {{bd.editor}}</p>
+                                                        <p>Nom de l'auteur : {{bd.authorFirstname}} {{bd.authorName}}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
