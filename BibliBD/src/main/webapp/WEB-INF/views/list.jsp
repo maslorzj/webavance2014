@@ -31,36 +31,24 @@
 
         <!-- Header -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Ma BibliBD</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                        <li class="active"><a href="#">Ma BDthèque</a></li>
-                        <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                        <li>          
-                            <form class="navbar-form">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="rechercher">
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-primary">
-                                            <span class="glyphicon glyphicon-search"></span>
-                                        </button>
-                                    </span>
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="list">Ma BibliBD</a>
             </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                <li><a href="list"> Ma BDth?que</a></li>
+                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
         <!-- /Header -->
 
@@ -69,7 +57,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4"></div>
-                    <div class="col-sm-4"><h1>Ma BDthèque</h1></div>
+                    <div class="col-sm-4"><h1>Ma BDth?que</h1></div>
                     <div class="col-sm-4"></div>
                 </div>
                 <hr>
@@ -78,7 +66,7 @@
                 <div class="row">
                     <form class="form-horizontal col-md-3">
                         <div class="input-group">
-                            <input type="text" ng-model="search" class="form-control" placeholder="Rechercher dans ma BDthèque" />
+                            <input type="text" ng-model="search" class="form-control" placeholder="Rechercher dans ma BDth?que" />
                             <span class="input-group-btn">
                                 <button type="submit" class="btn btn-primary">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -90,9 +78,9 @@
 
                 <!-- choix des filtres -->
                 <div class="row">
-                    <h4 id="orderTitle">Trier ma BDthèque :</h4>
+                    <h4 id="orderTitle">Trier ma BDth?que :</h4>
 
-                    <!-- bouton retour arrière -->
+                    <!-- bouton retour arri?re -->
                     <div id="returnBtn">
                         <button class="btn btn-primary" ng-click="lastOrder();" ng-disabled="currentOrder === 0">Retour</button>
                     </div>
@@ -124,8 +112,8 @@
                                 <div class="col-xs-3">
                                     <ul class="pic">
                                         <li>
-                                            <a href="#"><!-- lien vers la page de la Bd -->
-                                                <img class="photos photosSize" src="images\default.png" alt=""/>
+                                            <a ng-href="pageBd&id={{bd.id}}">
+                                                <img class="photos photosSize" ng-src="{{bd.couvPath}}" alt=""/>
                                                 <div class="text">
                                                     <div>
                                                         <p>Titre : {{bd.title}}</p>
@@ -148,7 +136,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p>© 2014 Emerald Enterprise</p>
+                <p>? 2014 Emerald Enterprise</p>
             </div>
         </footer>
         <!-- /Footer -->

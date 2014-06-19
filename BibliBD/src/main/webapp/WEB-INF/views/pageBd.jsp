@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
     <head>
@@ -16,7 +18,7 @@
         <link href="resources/css/bd.css" rel="stylesheet">
 
         <script>
-            var bd = JSON.parse(${bd});
+            var bd = ${bd};
             var isInBibliBd = ${isInBibliBd};
         </script>
         <script src="resources/js/angular.min.js"></script>
@@ -29,36 +31,24 @@
 
         <!-- Header -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Ma BibliBD</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                        <li><a href="#"> Ma BDthèque</a></li>
-                        <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                        <li>          
-                            <form class="navbar-form">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="rechercher">
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-primary" type="button">
-                                            <span class="glyphicon glyphicon-search"></span>
-                                        </button>
-                                    </span>
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="list"> Ma BibliBD</a>
             </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                <li><a href="list"> Ma BDthèque</a></li>
+                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
         <!-- /Header -->
 

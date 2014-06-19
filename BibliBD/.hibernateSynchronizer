@@ -3,5 +3,5 @@ package=com.bibli.bd
 databaseUrl=jdbc:mysql://localhost:3306/biblibd
 driver=com.mysql.jdbc.Driver
 EnumInclude=user_bd
-username=root
 ConfigurationFile=BibliBDsrchibernate.cfg.xml
+username=root

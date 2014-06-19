@@ -69,14 +69,14 @@
 			name="AuthorFirstname"
 			column="authorFirstname"
 			type="string"
-			not-null="true"
+			not-null="false"
 			length="255"
 		/>
 		<property
 			name="IllusFirstname"
 			column="illusFirstname"
 			type="string"
-			not-null="true"
+			not-null="false"
 			length="255"
 		/>
 		<property
