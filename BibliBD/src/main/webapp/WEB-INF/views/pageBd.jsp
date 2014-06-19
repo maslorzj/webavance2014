@@ -37,7 +37,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
                 </div>
@@ -45,9 +44,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
                         <li><a href="/bd/"> Ma BDthèque</a></li>
-                        <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                        <li><a href="inscription"> Inscription</a></li>
-                        <li><a href="connexion"> Connexion</a></li>
+                        <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
+                        <li><a href="deconnexion"> Déconnexion</a></li>
                     </ul>
                 </div>
             </div>
