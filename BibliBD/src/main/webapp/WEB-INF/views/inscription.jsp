@@ -2,24 +2,24 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app="myApp">
   <head>
-    <script src="../../resources/js/angular.min.js"></script>
-    <script src="../../resources/js/module/module.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/controller/addUserController.js"></script>
+    <script src="resources/js/angular.min.js"></script>
+    <script src="resources/js/module/module.js"></script>
+    <script src="resources/js/modal.js"></script>
+    <script src="resources/js/controller/addUserController.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Advanced Web Project">
     <meta name="author" content="EmeraldEnterprise">
-    <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
+    <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
     
     <title>Ma BibliBD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../resources/css/bd.css" rel="stylesheet">
+    <link href="resources/css/bd.css" rel="stylesheet">
   </head>
 
   <body ng-controller="AddUserController" ng-init="initController();">
@@ -57,7 +57,7 @@
                 </div>
                 <hr>
                 <div class="col-sm-4 hidden-sm hidden-xs">
-                    <img src="../../resources/img/subscribe.png" id="inscriptionImage">
+                    <img src="resources/img/subscribe.png" id="inscriptionImage">
                 </div>
                 <form name="inscForm" method="POST" action="addUser" class="form-horizontal col-sm-8" role="form">
                     <div class="col-sm-12" id="inscriptionForm">
@@ -143,7 +143,7 @@
 
 
         <!-- Bootstrap core JavaScript -->
-        <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
