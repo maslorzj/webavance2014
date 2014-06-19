@@ -1,3 +1,3 @@
 myApp.service('BdService', function(){
-	this.bds = bibliBd;
+	this.bds = bds;
 });

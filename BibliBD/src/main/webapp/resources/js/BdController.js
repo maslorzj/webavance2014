@@ -112,8 +112,8 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 				$scope.filtersAvailable.push(key);					
 			}
 		});*/
-		$scope.filtersAvailable = ['isbn', 'editor', 'title', 'authorName', 'authorFirstname', 'illusName', 'illusFirstname', 'language'];
-		$scope.filtersNames = {'isbn': 'ISBN', 
+		$scope.filtersAvailable = ['id', 'editor', 'title', 'authorName', 'authorFirstname', 'illusName', 'illusFirstname', 'language'];
+		$scope.filtersNames = {'id': 'ISBN', 
 							'editor' : 'Editeur', 
 							'title' : 'Titre', 
 							'authorFirstname' : "Prénom de l'auteur", 

@@ -6,23 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
-        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
+        <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd/{{id}} -->
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="resources/css/bd.css" rel="stylesheet">
+        <link href="../../resources/css/bd.css" rel="stylesheet">
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="../../assets/js/html5shiv.js"></script>
-          <script src="../../assets/js/respond.min.js"></script>
-        <![endif]-->
+        <script>var bd = "";</script>
+        <script src="../../resources/js/angular.min.js"></script>
+        <script src="../../resources/js/module.js"></script>
+        <script src="../../resources/js/pageBdController.js"></script>
+        <script src="../../resources/js/BdService.js"></script>
     </head>
 
-    <body ng-controller="BdController" ng-init="initController();">
+    <body ng-controller="PageBdController">
 
         <!-- Header -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -71,7 +71,7 @@
                 <div class="row">
                     <section class="col-md-6">
                         <!-- if no image use default image -->
-                        <img src="resources/img/couv/default.png">
+                        <img src="../../resources/img/couv/default.png">
                     </section>
                     <section class="col-md-6" id="infoBD">
                         <label for="dateDisplay" class="col-sm-6 control-label">Date de publication:</label>
@@ -106,6 +106,6 @@
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
