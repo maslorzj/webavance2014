@@ -81,7 +81,7 @@ body {
 }
 
 #allMandatory{
-  padding-top: 1%;
+  padding-top: 1.5%;
   padding-left: 35%;
 }
 
@@ -172,6 +172,11 @@ body {
 #connectionBtnRow{
   padding-top: 5%;
   padding-left: 58%;
+}
+
+#acceptCond{
+  padding-left: 22%;
+  padding-top: 2%;
 }
 
 /*css de la bibliBD */
