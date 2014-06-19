@@ -208,6 +208,8 @@ body {
   min-height: 100%;
   height: auto !important;
   margin: 0px auto -55px;
+  padding-bottom: 4%;
+  padding-top: 1%;
 }
 
 #displayBibliBD ul.pic {
@@ -291,6 +293,15 @@ body {
 #displayBibliBD .photosSize {
   width: 150px;
   height: 200px;
+}
+
+#addFilter{
+  padding-left: 1.5%;
+}
+
+#allFilters{
+  padding-bottom: 1%;
+  padding-left: 1.5%;
 }
 /* fin css de la bibliBD */
 

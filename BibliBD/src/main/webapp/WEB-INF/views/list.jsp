@@ -6,22 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmerauldEnterprise">
-        <link rel="shortcut icon" href="resources/css/bootstrap/docs/assets/ico/favicon.png">
+        <link rel="shortcut icon" href="../../resources/css/bootstrap/docs/assets/ico/favicon.png">
         <script>
             var bds = ${bibliBd};
             var classifyingArray = ${classifyingArray};
         </script>
-        <script src="resources/js/angular.min.js"></script>
-        <script src="resources/js/module/module.js"></script>
-        <script src="resources/js/controller/bibliBdController.js"></script>
-        <script src="resources/js/service/bibliBdService.js"></script>
+        <script src="../../resources/js/angular.min.js"></script>
+        <script src="../../resources/js/module/module.js"></script>
+        <script src="../../resources/js/controller/bibliBdController.js"></script>
+        <script src="../../resources/js/service/bibliBdService.js"></script>
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="resources/css/bd.css" rel="stylesheet">
+        <link href="../../resources/css/bd.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -61,7 +61,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4"></div>
-                    <div class="col-sm-4"><h1>Ma BDth?que</h1></div>
+                    <div class="col-sm-4"><h1>Ma BDthèque</h1></div>
                     <div class="col-sm-4"></div>
                 </div>
                 <hr>
@@ -70,7 +70,7 @@
                 <div class="row">
                     <form class="form-horizontal col-md-3">
                         <div class="input-group">
-                            <input type="text" ng-model="search" class="form-control" placeholder="Rechercher dans ma BDth?que" />
+                            <input type="text" ng-model="search" class="form-control" placeholder="Rechercher dans ma BDthèque" />
                             <span class="input-group-btn">
                                 <button type="submit" class="btn btn-primary">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -82,7 +82,7 @@
 
                 <!-- choix des filtres -->
                 <div class="row">
-                    <h4 id="orderTitle">Trier ma BDth?que :</h4>
+                    <h4 id="orderTitle">Trier ma BDthèque :</h4>
 
                     <!-- bouton retour arri?re -->
                     <div id="returnBtn">
@@ -95,18 +95,20 @@
                                         ng-selected="available === filterOrders[$parent.$index]" ng-value="available">{{setFilterNames(available)}}</option>
                             </select>
                             <button  class="btn btn-primary" ng-click="deleteFilter($index)" 
-                                     ng-disabled="filterOrders.length === 1">Delete</button>
+                                     ng-disabled="filterOrders.length === 1">Supprimer</button>
                         </div>
                         <!-- bouton ajouter filtre -->
-                        <button  class="btn btn-primary" ng-click="addNewFilter()" 
+                        <div id="addFilter">
+                            <button class="btn btn-primary" ng-click="addNewFilter()" 
                                  ng-disabled="filterOrders.length === filtersAvailable.length">Ajouter un filtre</button>
+                        </div>
                     </div>
 
                     <!-- partie de gauche -->
                     <div class ="col-sm-1">
                         <div ng-repeat="printed in currentPrinted| filter:search | orderBy:filterOrders" 
-                            ng-click="nextOrder(printed);">
-                            <p>{{printed}}</p>
+                            ng-click="nextOrder(printed);" id="allFilters">
+                            <a href="#">{{printed}}</a>
                         </div>
                     </div>
                     <!-- partie du milieu -->
@@ -140,13 +142,13 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p>? 2014 Emerald Enterprise</p>
+                <p>© 2014 Emerald Enterprise</p>
             </div>
         </footer>
         <!-- /Footer -->
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
