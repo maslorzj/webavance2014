@@ -182,6 +182,10 @@ body {
   padding-top: 2%;
 }
 
+.changeLinkColor{
+  color: #FFFFFF;
+}
+
 /*css de la bibliBD */
 
 #displayBibliBD ul.pic {

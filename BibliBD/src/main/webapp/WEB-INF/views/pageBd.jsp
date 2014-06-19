@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
     <head>
@@ -8,23 +7,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
-        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd&id={{id}} -->
+        <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd&id={{id}} -->
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="resources/css/bd.css" rel="stylesheet">
+        <link href="../../resources/css/bd.css" rel="stylesheet">
 
         <script>
             var bd = ${bd};
             var isInBibliBd = ${isInBibliBd};
         </script>
-        <script src="resources/js/angular.min.js"></script>
-        <script src="resources/js/module/module.js"></script>
-        <script src="resources/js/controller/pageBdController.js"></script>
-        <script src="resources/js/service/pageBdService.js"></script>
+        <script src="../../resources/js/angular.min.js"></script>
+        <script src="../../resources/js/module/module.js"></script>
+        <script src="../../resources/js/controller/pageBdController.js"></script>
+        <script src="../../resources/js/service/pageBdService.js"></script>
     </head>
 
     <body ng-controller="PageBdController">
@@ -46,7 +45,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
                         <li><a href="/bd/"> Ma BDthèque</a></li>
-                        <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
+                        <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
                         <li><a href="inscription"> Inscription</a></li>
                         <li><a href="connexion"> Connexion</a></li>
                     </ul>
@@ -60,7 +59,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4"></div>
-                    <div class="col-sm-4"><h1>--Ici Nom de la BD--</h1></div>
+                    <div class="col-sm-4"><h1>{{PageBdService.bd.title}}</h1></div>
                     <div class="col-sm-4"></div>
                 </div>
                 <hr>
@@ -106,8 +105,21 @@
                 </div>
             </div>
         </div>
-        <a ng-if="!PageBdService.isInBibliBd" ng-href="addToBibiliBd&id={{PageBdService.bd.id}}">Ajouter à la bibliBD</a>
-        <a ng-if="PageBdService.isInBibliBd" ng-href="delFromBibiliBd&id={{PageBdService.bd.id}}">Supprimer de la bibliBD</a>
+        <div id="bdIsNotInBibliBD" ng-if="!PageBdService.isInBibliBd">
+            <button class="btn btn-primary">
+                <a class="changeLinkColor" ng-href="addToBibiliBd&id={{PageBdService.bd.id}}">
+                    <span class="glyphicon glyphicon-plus-sign"></span> Ajouter à la bibliBD
+                </a>
+            </button>
+        </div>
+        <div id="bdIsInBibliBD" ng-if="PageBdService.isInBibliBd">
+            <p>Cette Bd est dans votre bibliBD</p>
+            <button class="btn btn-primary">
+            <a class="changeLinkColor" ng-href="delFromBibiliBd&id={{PageBdService.bd.id}}">
+                <span class="glyphicon glyphicon-minus-sign"></span> Supprimer de la bibliBD
+            </a>
+            </button>
+        </div>
         <!-- /Main -->
 
         <!-- Footer -->
@@ -120,6 +132,6 @@
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
