@@ -262,7 +262,7 @@ div.text {
 
 .photosSize {
   width: 150px;
-  heigth: 200px;
+  height: 200px;
 }
 /*css du carousel de la page d'accueil */
 
@@ -280,4 +280,89 @@ div.text {
   /*left:50%;*/
   top:20px;
   /*margin-left:-200px;*/
+}
+
+/*css du reste de la page d'accueil */
+
+ul.pic {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.pic li {
+  display: inline-block;
+  height: 180px;
+  margin: 0 1em 1em 0;
+  position: relative;
+  width: 150px;
+}
+
+div.text {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 150px;
+}
+
+div.text div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.text {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  opacity: 0;
+}
+
+ul.pic li:hover div.text {
+  opacity: 1;
+}
+
+div.text {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+#orderTitle{
+  padding-top: 2%;
+  padding-left: 1.5%;
+  padding-bottom: 1%;
+}
+
+#returnBtn{
+  padding-left: 1.5%;
+  padding-bottom: 3%;
+}
+
+.photosSize {
+  width: 150px;
+  height: 200px;
 }

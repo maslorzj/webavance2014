@@ -37,6 +37,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
                 </div>
@@ -45,12 +46,8 @@
                         <li class="active"><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
                         <li><a href="/bd/"> Ma BDthèque</a></li>
                         <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                        <li>          
-                            <form class="navbar-form">
-                                <input type="text" style="width:150px" class="input-sm form-control" placeholder="rechercher">
-                                <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
-                            </form>
-                        </li>
+                        <li><a href="inscription"> Inscription</a></li>
+                        <li><a href="connexion"> Connexion</a></li>
                     </ul>
                 </div>
             </div>
@@ -101,7 +98,7 @@
                 </div>
             </div>
         </div>
-            <!-- /Main -->
+        <!-- /Main -->
 
         <!-- Footer -->
         <footer class="footer navbar-fixed-bottom" role="footer">
@@ -111,9 +108,8 @@
         </footer>
         <!-- /Footer -->
 
-
         <!-- Bootstrap core JavaScript -->
-        <script src="resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
-        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
