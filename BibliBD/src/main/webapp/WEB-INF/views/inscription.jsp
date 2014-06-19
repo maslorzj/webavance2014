@@ -89,8 +89,8 @@
                         </div>
                     </div>
                     <p id="acceptCond">
-                        <input name="checkboxes" id="checkboxes-0" type="checkbox"> 
-                        J'accèpte les 
+                        <input name="checkboxes" id="checkboxes-0" type="checkbox" ng-model="user.conditions" required> 
+                        J'accepte les 
                         <a data-toggle="modal" href="#modalCond">
                             conditions générales d'utilisation
                         </a>
@@ -123,9 +123,8 @@
                         </div>
                     </div>
                     <p class="mandatoryField" id="allMandatory">Tous les champs sont obligatoires</p>
-                    <div class="mandatoryField" ng-if="ajaxError"><span>{{ajaxError}}</span></div>
                     <div class="row" id="inscriptionBtnRow">
-                        <button id="inscriptionBtn" class="btn btn-primary" ng-click="sendNewUser()">
+                        <button id="inscriptionBtn" class="btn btn-primary" ng-disabled="!passwordsChecked || !user.conditions || !inscForm.$valid">
                             Je veux m'inscrire <span class="glyphicon glyphicon-ok-circle"></span>
                         </button>
                     </div>

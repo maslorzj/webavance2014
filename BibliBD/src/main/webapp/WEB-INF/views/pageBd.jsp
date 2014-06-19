@@ -77,7 +77,7 @@
                         <img ng-src="{{PageBdService.bd.couvPath}}">
                     </section>
                     <section class="col-md-6" id="infoBD">
-                        <div>
+                        <div ng-if="{{PageBdService.bd.publishDate}}">
                             <label for="dateDisplay" class="col-sm-6 control-label">Date de publication:</label>
                             <p id="dateDisplay">{{PageBdService.bd.publishDate}}</p>
                         </div>
