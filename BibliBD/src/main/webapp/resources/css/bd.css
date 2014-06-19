@@ -85,7 +85,31 @@ body {
   padding-left: 35%;
 }
 
-#inscription, #pageBd, #connection, #accueil{
+#inscription{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
+}
+
+#connection{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
+}
+
+#accueil{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
+}
+
+#pageBd{
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -55px;
+}
+
+#displayBibliBD{
   min-height: 100%;
   height: auto !important;
   margin: 0px auto -55px;
@@ -148,6 +172,86 @@ body {
 #connectionBtnRow{
   padding-top: 5%;
   padding-left: 58%;
+}
+
+/*css de la bibliBD */
+
+ul.pic {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.pic li {
+  display: inline-block;
+  height: 180px;
+  margin: 0 1em 1em 0;
+  position: relative;
+  width: 150px;
+}
+
+div.text {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 150px;
+}
+
+div.text div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.text {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  opacity: 0;
+}
+
+ul.pic li:hover div.text {
+  opacity: 1;
+}
+
+div.text {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+#orderTitle{
+  padding-top: 2%;
+  padding-left: 1.5%;
+  padding-bottom: 1%;
+}
+
+#returnBtn{
+  padding-left: 1.5%;
+  padding-bottom: 3%;
 }
 
 /*css du carousel de la page d'accueil */
