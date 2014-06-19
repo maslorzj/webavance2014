@@ -3,7 +3,11 @@ myApp.controller('BibliBdController', ['$scope', 'BibliBdService', function($sco
 	// Initialize all variables
 	$scope.initController = function() {
 		$scope.getAvailableFilters(BibliBdService.bds);
-		$scope.filterOrders = ['editor', 'authorName', 'title']; // à load selon les choix de l'utilisateur
+		if(BibliBdService.classifyingArray) {
+			$scope.filterOrders = BibliBdService.classifyingArray;
+		} else {
+			$scope.filterOrders = ['editor', 'authorName', 'title']; // default value
+		}
 		$scope.reset();
 	};
 

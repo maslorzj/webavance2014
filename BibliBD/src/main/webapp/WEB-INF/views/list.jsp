@@ -7,7 +7,10 @@
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmerauldEnterprise">
         <link rel="shortcut icon" href="resources/css/bootstrap/docs/assets/ico/favicon.png">
-        <script>var bds = ${bibliBd};</script>
+        <script>
+            var bds = ${bibliBd};
+            var classifyingArray = ${classifyingArray};
+        </script>
         <script src="resources/js/angular.min.js"></script>
         <script src="resources/js/module/module.js"></script>
         <script src="resources/js/controller/bibliBdController.js"></script>
