@@ -29,8 +29,6 @@ public class Bd extends BaseBd {
 		java.lang.String _title,
 		java.lang.String _couvPath,
 		java.lang.String _authorName,
-		java.lang.String _authorFirstname,
-		java.lang.String _illusFirstname,
 		java.lang.String _illusName) {
 
 		super (
@@ -39,8 +37,6 @@ public class Bd extends BaseBd {
 			_title,
 			_couvPath,
 			_authorName,
-			_authorFirstname,
-			_illusFirstname,
 			_illusName);
 	}
 /*[CONSTRUCTOR MARKER END]*/

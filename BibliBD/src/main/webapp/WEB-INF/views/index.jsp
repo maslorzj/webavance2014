@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -8,16 +10,16 @@
     <meta name="author" content="EmeraldEnterprise">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
-    <script type="text/javascript" src="../../resources/js/app_car.js"></script>
-    <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
+    <script type="text/javascript" src="resources/js/app_car.js"></script>
+    <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
     
     <title>Ma BibliBD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../resources/css/bd.css" rel="stylesheet">
+    <link href="resources/css/bd.css" rel="stylesheet">
   </head>
 
   <body>
@@ -32,19 +34,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
+              <a class="navbar-brand" href="list"> Ma BibliBD</a>
             </div>
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                <li><a href="/bd/"> Ma BDthèque</a></li>
+                <li class="active"><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                <li><a href="list"> Ma BDthèque</a></li>
                 <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                <li>          
-                  <form class="navbar-form">
-                    <input type="text" style="width:150px" class="input-sm form-control" placeholder="rechercher">
-                    <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
-                  </form>
-                </li>
               </ul>
             </div>
           </div>
@@ -90,7 +86,7 @@
 
 
         <!-- Bootstrap core JavaScript -->
-        <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

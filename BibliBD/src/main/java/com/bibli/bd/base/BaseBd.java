@@ -77,8 +77,6 @@ public abstract class BaseBd  implements Serializable {
 		java.lang.String _title,
 		java.lang.String _couvPath,
 		java.lang.String _authorName,
-		java.lang.String _authorFirstname,
-		java.lang.String _illusFirstname,
 		java.lang.String _illusName) {
 
 		this.setId(_id);
@@ -86,8 +84,6 @@ public abstract class BaseBd  implements Serializable {
 		this.setTitle(_title);
 		this.setCouvPath(_couvPath);
 		this.setAuthorName(_authorName);
-		this.setAuthorFirstname(_authorFirstname);
-		this.setIllusFirstname(_illusFirstname);
 		this.setIllusName(_illusName);
 		initialize();
 	}

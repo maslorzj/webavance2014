@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="fr" ng-app="myApp">
@@ -38,9 +40,9 @@
             </div>
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span>Accueil</a></li>
-                <li><a href="list">Ma BDthèque</a></li>
-                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span>Ajouter une nouvelle BD</a></li>
+                <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                <li><a href="list"> Ma BDthèque</a></li>
+                <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
               </ul>
             </div>
           </div>

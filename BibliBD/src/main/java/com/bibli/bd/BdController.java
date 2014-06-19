@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -92,6 +93,41 @@ public class BdController {
 	public String addUser(Model model) {
 		return "inscription";
 	}
+	
+	@RequestMapping(value = "/pageBd&id={bdId}", method = RequestMethod.GET)
+	public String pageBd(@PathVariable Long bdId, Model model) throws JSONException {
+		Bd bd = new Bd();
+		boolean isInBibliBd;
+		
+		JSONObject JSONBd = new JSONObject();
+		Collection<Bd> col = dao.getBdById(bdId);
+		Iterator<Bd> i = col.iterator();
+		while (i.hasNext()) {
+			bd = i.next();
+			JSONBd = bd.toJSON();
+		}
+		if(JSONBd.length() == 0) {
+			return "newBd";
+		} else {
+			BdUser bdUser = new BdUser();
+			try {
+				JSONObject JSONBdUser = new JSONObject();
+				Collection<BdUser> col2 = dao.isBdInBibliBd(bd.getId(), getUser().getId());
+				Iterator<BdUser> i2 = col2.iterator();
+				while (i2.hasNext()) {
+					bdUser = i2.next();
+					JSONBdUser = bdUser.toJSON();
+				}
+				isInBibliBd = (JSONBdUser.length() != 0);
+			} catch (java.lang.NullPointerException ne) {
+				return "connexion";
+			}						
+		}		
+		model.addAttribute("bd", JSONBd);
+		model.addAttribute("isInBibliBd", isInBibliBd);
+		
+		return "pageBd";
+	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model) throws JSONException {
@@ -125,6 +161,32 @@ public class BdController {
 		// Adding the bd in the user bibliBD
 		BdUser newBdUser = new BdUser(bd, getUser());
 		dao.insertBdUser(newBdUser);
+		return list(model);
+	}
+	
+	@RequestMapping(value = "/addToBibliBd&id={bdId}", method = RequestMethod.GET)
+	public String addToBibliBd(@PathVariable Long bdId, Model model) throws JSONException {
+		Bd bd = new Bd();
+		Collection<Bd> col = dao.getBdById(bdId);
+		Iterator<Bd> i = col.iterator();
+		while (i.hasNext()) {
+			bd = i.next();
+		}
+		BdUser newBdUser = new BdUser(bd, getUser());
+		dao.insertBdUser(newBdUser);
+		return list(model);
+	}
+	
+	@RequestMapping(value = "/delFromBibliBd&id={bdId}", method = RequestMethod.GET)
+	public String delFromBibliBd(@PathVariable Long bdId, Model model) throws JSONException {
+		Bd bd = new Bd();
+		Collection<Bd> col = dao.getBdById(bdId);
+		Iterator<Bd> i = col.iterator();
+		while (i.hasNext()) {
+			bd = i.next();
+		}
+		BdUser newBdUser = new BdUser(bd, getUser());
+		dao.deleteBdUser(newBdUser);
 		return list(model);
 	}
 

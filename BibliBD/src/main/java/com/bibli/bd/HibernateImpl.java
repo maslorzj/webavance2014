@@ -47,6 +47,34 @@ public class HibernateImpl {
 		return list;
 	}
 
+	public Collection<Bd> getBdById(Long bdId) {
+		List list = null;
+		try {
+			Query query = session.createQuery("select from Bd "
+					+ "where id = :bdId");
+			query.setLong("bdId", bdId);
+			list = query.list();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public Collection<BdUser> isBdInBibliBd(Long bdId, int userId) {
+		List list = null;
+		try {
+			Query query = session.createQuery("select from BdUser "
+					+ "where bdId = :bd "
+					+ "and userId = :user");
+			query.setLong("bd", bdId);
+			query.setInteger("user", userId);
+			list = query.list();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 	public Collection<Bd> getBdByUserId(int userId) {
 		List list = null;
 		try {
@@ -60,13 +88,13 @@ public class HibernateImpl {
 		}
 		return list;
 	}
-	
+
 	public Collection<User> IsUserExist(String pseudo, int password) {
 		List list = null;
 		try {
-			Query query = session.createQuery("select from User " 
-			+ "where pseudo = :userPseudo "
-			+ "and password = :userPassword");
+			Query query = session.createQuery("select from User "
+					+ "where pseudo = :userPseudo "
+					+ "and password = :userPassword");
 			query.setString("userPseudo", pseudo);
 			query.setInteger("userPassword", password);
 			list = query.list();
@@ -79,7 +107,7 @@ public class HibernateImpl {
 	public void insertBd(Bd bd) {
 		if (bd.getCouvPath() == null) {
 			bd.setCouvPath("resources/img/couv/default.png");
-		}		
+		}
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
@@ -95,8 +123,8 @@ public class HibernateImpl {
 			}
 		}
 	}
-	
-	public void insertBdUser(BdUser bdUser) {		
+
+	public void insertBdUser(BdUser bdUser) {
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
@@ -113,7 +141,24 @@ public class HibernateImpl {
 		}
 	}
 	
-	public void insertUser(User user) {		
+	public void deleteBdUser(BdUser bdUser) {
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			session.delete(bdUser);
+			tx.commit();
+		} catch (Exception e) {
+			if (tx != null) {
+				try {
+					tx.rollback();
+				} catch (HibernateException e1) {
+					e.getMessage();
+				}
+			}
+		}
+	}
+
+	public void insertUser(User user) {
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
