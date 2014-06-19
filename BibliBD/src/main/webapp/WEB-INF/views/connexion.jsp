@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -8,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Advanced Web Project">
     <meta name="author" content="EmeraldEnterprise">
-    <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
+    <link rel="shortcut icon" href="../../resources/bootstrap/docs/assets/ico/favicon.png">
     
     <title>Ma BibliBD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="resources/css/bd.css" rel="stylesheet">
+    <link href="../../resources/css/bd.css" rel="stylesheet">
   </head>
 
   <body>
@@ -66,7 +65,7 @@
                         </div>
                     </section>
                     <section class="col-md-2 hidden-sm hidden-xs">
-                        <img src="resources/img/connection2.gif" id="connection2Image">
+                        <img src="../../resources/img/connection2.gif" id="connection2Image">
                     </section>
                     <section class="col-md-5" id="connectSection">
                         <form name="coForm" method="POST" class="form-horizontal" role="form" id="coForm">
@@ -114,7 +113,7 @@
 
 
         <!-- Bootstrap core JavaScript -->
-        <script src="resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
-        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
+        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
