@@ -4,8 +4,8 @@
 <html lang="fr" ng-app="myApp">
   <head>
     <script src="resources/js/angular.min.js"></script>
-    <script src="resources/js/module.js"></script>
-    <script src="resources/js/addUser.js"></script>
+    <script src="resources/js/module/module.js"></script>
+    <script src="resources/js/controller/addUserController.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

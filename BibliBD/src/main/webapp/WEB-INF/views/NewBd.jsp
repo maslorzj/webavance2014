@@ -8,8 +8,8 @@
     <meta name="author" content="EmeraldEnterprise">
     <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
     <script src="resources/js/angular.min.js"></script>
-    <script src="resources/js/module.js"></script>
-    <script src="resources/js/addBd.js"></script>
+    <script src="resources/js/module/module.js"></script>
+    <script src="resources/js/controller/addBdController.js"></script>
     <title>Ma BibliBD</title>
 
     <!-- Bootstrap core CSS -->
@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-            <li><a href="list"> Ma BDthèque</a></li>
+            <li><a href="list"> Ma BDth?que</a></li>
             <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
           </ul>
         </div>
@@ -66,10 +66,10 @@
                 <div class="col-sm-12" id="addForm">
                     <div class="form-group">
                         <label for="id" class="col-sm-6 control-label">ISBN : 
-                            <span class="mandatoryField" ng-if="!myForm.id.$valid || !idLengthChecked">Obligatoire (10 ou 13 caractères)</span>
+                            <span class="mandatoryField" ng-if="!myForm.id.$valid || !idLengthChecked">Obligatoire (10 ou 13 caract?res)</span>
                         </label>
                         <div class="col-sm-6">
-                            <input id="id" ng-change="checkIDLength()" placeholder="combinaison de 10 à 13 chiffres" class="form-control" type="text" name="id" ng-model="newBd.id" required/>
+                            <input id="id" ng-change="checkIDLength()" placeholder="combinaison de 10 ? 13 chiffres" class="form-control" type="text" name="id" ng-model="newBd.id" required/>
                         </div>     
                     </div>
                     <div class="form-group">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="authorFirstname" class="col-sm-6 control-label">Prénom de l'auteur : 
+                        <label for="authorFirstname" class="col-sm-6 control-label">Pr?nom de l'auteur : 
                             <span class="mandatoryField" ng-if="!myForm.authorFirstname.$valid">Obligatoire</span>
                         </label>
                         <div class="col-sm-6">
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="illusFirstname" class="col-sm-6 control-label">Prénom de l'illustrateur : 
+                        <label for="illusFirstname" class="col-sm-6 control-label">Pr?nom de l'illustrateur : 
                             <span class="mandatoryField" ng-if="!myForm.illusFirstname.$valid">Obligatoire</span>
                         </label>
                         <div class="col-sm-6">
@@ -127,13 +127,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="publishDate" class="col-sm-6 control-label">Année de publication : </label>
+                        <label for="publishDate" class="col-sm-6 control-label">Ann?e de publication : </label>
                         <div class="col-sm-6">
                             <input id="publishDate" name="publishDate" class="form-control" placeholder="Ex : 1999" type="text" ng-model="newBd.publishDate" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="serie" class="col-sm-6 control-label">Série : </label>
+                        <label for="serie" class="col-sm-6 control-label">S?rie : </label>
                         <div class="col-sm-6">
                             <input id="serie" name="serie" class="form-control" type="text" ng-model="newBd.serie" />
                         </div>
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="colorFirstname" class="col-sm-6 control-label">Prénom du coloriste : </label>
+                        <label for="colorFirstname" class="col-sm-6 control-label">Pr?nom du coloriste : </label>
                         <div class="col-sm-6">
                             <input id="colorFirstname" name="colorFirstname" class="form-control" type="text" ng-model="newBd.colorFirstname" />
                         </div>
@@ -171,7 +171,7 @@
     <!-- Footer -->
     <footer class="footer" role="footer">
       <div class="container">
-          <p>© 2014 Emerald Enterprise</p>
+          <p>? 2014 Emerald Enterprise</p>
       </div>
     </footer>
     <!-- /Footer -->

@@ -17,9 +17,9 @@
 
         <script>var bd = "";</script>
         <script src="../../resources/js/angular.min.js"></script>
-        <script src="../../resources/js/module.js"></script>
-        <script src="../../resources/js/pageBdController.js"></script>
-        <script src="../../resources/js/BdService.js"></script>
+        <script src="../../resources/js/module/module.js"></script>
+        <script src="../../resources/js/controller/pageBdController.js"></script>
+        <script src="../../resources/js/service/pageBdService.js"></script>
     </head>
 
     <body ng-controller="PageBdController">

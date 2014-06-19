@@ -1,8 +1,8 @@
-myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scope, $http, BdService){
+myApp.controller('BibliBdController', ['$scope', '$http', 'BibliBdService', function($scope, $http, BibliBdService){
 
 	// Initialize all variables
 	$scope.initController = function() {
-		$scope.getAvailableFilters(BdService.bds);
+		$scope.getAvailableFilters(BibliBdService.bds);
 		$scope.filterOrders = ['editor', 'authorName', 'title']; // à load selon les choix de l'utilisateur
 		$scope.reset();
 	};
@@ -10,7 +10,7 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 	$scope.reset = function() {
 		$scope.currentOrder = 0;
 		$scope.filters = {"$scope.filterOrders[$scope.currentOrder]":null};
-		$scope.getAllBds(BdService.bds);
+		$scope.getAllBds(BibliBdService.bds);
 	};
 
 	// select the following level of bds, depending on the filter chosen
@@ -26,7 +26,7 @@ myApp.controller('BdController', ['$scope', '$http', 'BdService', function($scop
 	$scope.lastOrder = function() {
 		$scope.currentOrder--;
 		delete($scope.filters[$scope.filterOrders[$scope.currentOrder]]);
-		$scope.getAllBds(BdService.bds);
+		$scope.getAllBds(BibliBdService.bds);
 	};
 
 	// select all bds in the list depending the filters

@@ -9,9 +9,9 @@
         <link rel="shortcut icon" href="resources/css/bootstrap/docs/assets/ico/favicon.png">
         <script>var bds = ${bibliBd};</script>
         <script src="resources/js/angular.min.js"></script>
-        <script src="resources/js/module.js"></script>
-        <script src="resources/js/BdController.js"></script>
-        <script src="resources/js/BdService.js"></script>
+        <script src="resources/js/module/module.js"></script>
+        <script src="resources/js/controller/bibliBdController.js"></script>
+        <script src="resources/js/service/bibliBdService.js"></script>
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
@@ -27,7 +27,7 @@
         <![endif]-->
     </head>
 
-    <body ng-controller="BdController" ng-init="initController();" ng-cloak>
+    <body ng-controller="BibliBdController" ng-init="initController();" ng-cloak>
 
         <!-- Header -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
