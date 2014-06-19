@@ -8,7 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
-        <script>/*var bds = ${bdtheque};*/</script>
+        <script>/*
+            var bds = ${bdtheque};
+            var isConnected = ${isConnected};
+            */
+        </script>
         <script src="../../resources/js/angular.min.js"></script>
         <script src="../../resources/js/module/module.js"></script>
         <script src="../../resources/js/controller/indexController.js"></script>
@@ -36,8 +40,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span ng-if="!isConnected" class="icon-bar"></span>
+                        <span ng-if="!isConnected" class="icon-bar"></span>
+                        <span ng-if="isConnected" class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
                 </div>
@@ -46,8 +51,9 @@
                         <li class="active"><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
                         <li><a href="/bd/"> Ma BDthèque</a></li>
                         <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
-                        <li><a href="inscription"> Inscription</a></li>
-                        <li><a href="connexion"> Connexion</a></li>
+                        <li ng-if="!isConnected"><a href="inscription"> Inscription</a></li>
+                        <li ng-if="!isConnected"><a href="connexion"> Connexion</a></li>
+                        <li ng-if="isConnected"><a href="deconnexion"> Déconnexion</a></li>
                     </ul>
                 </div>
             </div>
