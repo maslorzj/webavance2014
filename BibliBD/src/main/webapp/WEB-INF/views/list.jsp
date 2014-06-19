@@ -6,22 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmerauldEnterprise">
-        <link rel="shortcut icon" href="../../resources/css/bootstrap/docs/assets/ico/favicon.png">
+        <link rel="shortcut icon" href="resources/css/bootstrap/docs/assets/ico/favicon.png">
         <script>
             var bds = ${bibliBd};
             var classifyingArray = ${classifyingArray};
         </script>
-        <script src="../../resources/js/angular.min.js"></script>
-        <script src="../../resources/js/module/module.js"></script>
-        <script src="../../resources/js/controller/bibliBdController.js"></script>
-        <script src="../../resources/js/service/bibliBdService.js"></script>
+        <script src="resources/js/angular.min.js"></script>
+        <script src="resources/js/module/module.js"></script>
+        <script src="resources/js/controller/bibliBdController.js"></script>
+        <script src="resources/js/service/bibliBdService.js"></script>
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../../resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="resources/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../../resources/css/bd.css" rel="stylesheet">
+        <link href="resources/css/bd.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -80,16 +80,17 @@
                     </form>
                 </div>
 
-                <!-- choix des filtres -->
-                <div class="row">
-                    <h4 id="orderTitle">Trier ma BDthèque :</h4>
-
-                    <!-- bouton retour arri?re -->
-                    <div id="returnBtn">
-                        <button class="btn btn-primary" ng-click="lastOrder();" ng-disabled="currentOrder === 0">Retour</button>
-                    </div>
-                    <div>
-                        <div ng-repeat="filter in filterOrders">
+                <div class="row" id="rowFilters">
+                    <section class="col-md-4">
+                        <h4 id="orderTitle">Trier ma BDthèque :</h4>
+                        <!-- bouton retour arrière -->
+                        <div id="returnBtn">
+                            <button class="btn btn-primary" ng-click="lastOrder();" ng-disabled="currentOrder === 0">Retour</button>
+                        </div>
+                    </section>
+                    <!-- choix des filtres -->
+                    <section class="globalFilters col-md-4">
+                        <div class="control-group" ng-repeat="filter in filterOrders" id="allFilters">
                             <select ng-change="changeFilter();" ng-model="filterOrders[$index]" >
                                 <option ng-repeat="available in filtersAvailable| filter:checkAvailableFilters($index);"
                                         ng-selected="available === filterOrders[$parent.$index]" ng-value="available">{{setFilterNames(available)}}</option>
@@ -97,17 +98,20 @@
                             <button  class="btn btn-primary" ng-click="deleteFilter($index)" 
                                      ng-disabled="filterOrders.length === 1">Supprimer</button>
                         </div>
-                        <!-- bouton ajouter filtre -->
-                        <div id="addFilter">
+                    </section>
+                    <!-- bouton ajouter filtre -->
+                    <section class="globalFilters">
+                        <div id="addFilter" class="col-md-4">
                             <button class="btn btn-primary" ng-click="addNewFilter()" 
                                  ng-disabled="filterOrders.length === filtersAvailable.length">Ajouter un filtre</button>
                         </div>
-                    </div>
-
+                    </section>
+                </div>
+                <div class="row">
                     <!-- partie de gauche -->
-                    <div class ="col-sm-1">
+                    <div class ="col-md-2">
                         <div ng-repeat="printed in currentPrinted| filter:search | orderBy:filterOrders" 
-                            ng-click="nextOrder(printed);" id="allFilters">
+                            ng-click="nextOrder(printed);" id="allFiltered">
                             <a href="#">{{printed}}</a>
                         </div>
                     </div>
@@ -149,6 +153,6 @@
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../../resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

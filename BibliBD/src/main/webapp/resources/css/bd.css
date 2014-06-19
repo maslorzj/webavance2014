@@ -299,9 +299,21 @@ body {
   padding-left: 1.5%;
 }
 
+#rowFilters{
+  padding-bottom: 5%;
+}
+
 #allFilters{
-  padding-bottom: 1%;
-  padding-left: 1.5%;
+  padding-top: 1%;
+}
+
+#allFiltered{
+  padding-bottom: 10%;
+  padding-left: 3%;
+}
+
+.globalFilters{
+  padding-top: 4%;
 }
 /* fin css de la bibliBD */
 
