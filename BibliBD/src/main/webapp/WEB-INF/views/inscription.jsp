@@ -6,7 +6,6 @@
   <head>
     <script src="resources/js/angular.min.js"></script>
     <script src="resources/js/module/module.js"></script>
-    <script src="resources/js/modal.js"></script>
     <script src="resources/js/controller/addUserController.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -150,5 +149,6 @@
         <!-- Bootstrap core JavaScript -->
         <script src="resources/bootstrap/dist/js/jquery-1.11.1.min.js"></script>
         <script src="resources/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="resources/js/modal.js"></script>
     </body>
 </html>

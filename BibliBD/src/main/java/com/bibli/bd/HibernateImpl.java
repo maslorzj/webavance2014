@@ -145,7 +145,9 @@ public class HibernateImpl {
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			session.delete(bdUser);
+			session.delete("select from BdUser"
+					+ " where userId = " + bdUser.getUser().getId()
+					+ " and bdId = " + bdUser.getBd().getId());
 			tx.commit();
 		} catch (Exception e) {
 			if (tx != null) {

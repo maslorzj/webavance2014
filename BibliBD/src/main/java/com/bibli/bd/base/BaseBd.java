@@ -339,7 +339,7 @@ public abstract class BaseBd  implements Serializable {
 		JSONBd.put("title", this.getTitle());
 		JSONBd.put("authorName", this.getAuthorName());
 		JSONBd.put("authorFirstname", this.getAuthorFirstname());
-		JSONBd.put("illusFirstName", this.getIllusName());
+		JSONBd.put("illusName", this.getIllusName());
 		JSONBd.put("illusFirstname", this.getIllusFirstname());
 		JSONBd.put("language", this.getLanguage());
 		JSONBd.put("publishDate", this.getPublishDate());

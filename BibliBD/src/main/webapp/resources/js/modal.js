@@ -1,3 +1,3 @@
 $('#openBtn').click(function(){
-	$('#modalCond').modal({show:true})
+	$('#modalCond').modal({show:true});
 });

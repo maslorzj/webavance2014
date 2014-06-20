@@ -78,15 +78,29 @@ public class BdController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) throws JSONException {
+		//Check if the user is connected
+		boolean isConnected;
+		try {
+			isConnected = (getUser().getId() == null) ? false : true;
+		} catch (java.lang.NullPointerException ne) {
+			isConnected = false;
+		}		
 		bdtheque = getBDtheque();
 		logger.info("Listing Bdtheque");
 		model.addAttribute("bdtheque", bdtheque);
+		model.addAttribute("isConnected", isConnected);
 		return "index";
 	}
 
 	@RequestMapping(value = "/connexion", method = RequestMethod.GET)
 	public String connexion(Model model) {
 		return "connexion";
+	}
+	
+	@RequestMapping(value = "/deconnexion", method = RequestMethod.GET)
+	public String deconnexion(Model model) throws JSONException {
+		setUser(new User());
+		return index(model);
 	}
 
 	@RequestMapping(value = "/inscription", method = RequestMethod.GET)
@@ -146,10 +160,13 @@ public class BdController {
 	@RequestMapping(value = "/newBd", method = RequestMethod.GET)
 	public String newBd(Model model) {
 		try {
-			getUser().getId();
-			Bd bd = new Bd();
-			model.addAttribute("bd", bd);
-			return "newBd";
+			if(getUser().getId() == null) {
+				return "connexion";
+			} else {
+				Bd bd = new Bd();
+				model.addAttribute("bd", bd);
+				return "newBd";
+			}
 		} catch (java.lang.NullPointerException ne) {
 			return "connexion";
 		}

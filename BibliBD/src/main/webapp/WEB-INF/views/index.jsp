@@ -17,7 +17,6 @@
         <script src="resources/js/controller/indexController.js"></script>
         <script src="resources/js/service/bibliBdService.js"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
-        <script type="text/javascript" src="resources/js/app_car.js"></script>
         <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
     
         <title>Ma BibliBD</title>
@@ -29,7 +28,7 @@
         <link href="resources/css/bd.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body  ng-controller="IndexController" ng-cloack>
 
         <!-- Header -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -43,12 +42,12 @@
                         <span ng-if="!isConnected" class="icon-bar"></span>
                         <span ng-if="isConnected" class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
+                    <a class="navbar-brand" href="list"> Ma BibliBD</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                        <li><a href="/bd/"> Ma BDthèque</a></li>
+                        <li class="active"><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                        <li><a href="list"> Ma BDthèque</a></li>
                         <li><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
                         <li ng-if="!isConnected"><a href="inscription"> Inscription</a></li>
                         <li ng-if="!isConnected"><a href="connexion"> Connexion</a></li>
@@ -62,24 +61,7 @@
         <!-- Main -->
         <div class="main" id="accueil">  
             <div class="container">
-                <!-- <div class="carousel slide">  
-                    <p>un carousel</p>
-                    <div class="ng-scope" ng-app="app_car">
-                        <div ng-controller="CarouselDemoCtrl" id="slides_control">
-                            <div>
-                                <carousel interval="myInterval">
-                                    <slide ng-repeat="slide in slides" active="slide.active">
-                                        <img ng-src="{{slide.image}}">
-                                        <div class="carousel-caption">
-                                            <h4>Slide {{$index+1}}</h4>
-                                        </div>
-                                    </slide>
-                                </carousel>
-                            </div>
-                        </div>
-                    </div>  
-                </div> -->
-                <div class="container marketing" id="photoContainer" ng-controller="IndexController" ng-cloack>
+                <div class="container marketing" id="photoContainer">
                     <div>
                         <div ng-repeat="bd in bds| filter:search | orderBy:filterOrders">
                             <div class="col-xs-3">

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
@@ -7,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Advanced Web Project">
         <meta name="author" content="EmeraldEnterprise">
-        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png"><!-- pageBd&id={{id}} -->
+        <link rel="shortcut icon" href="resources/bootstrap/docs/assets/ico/favicon.png">
         <title>Ma BibliBD</title>
 
         <!-- Bootstrap core CSS -->
@@ -38,12 +40,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/bd/"> Ma BibliBD</a>
+                    <a class="navbar-brand" href="list"> Ma BibliBD</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/bd/index"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-                        <li><a href="/bd/"> Ma BDthèque</a></li>
+                        <li><a href="/BibliBD/"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                        <li><a href="list"> Ma BDthèque</a></li>
                         <li class="active"><a href="newBd"><span class="glyphicon glyphicon-plus-sign"></span> Ajouter une nouvelle BD</a></li>
                         <li><a href="deconnexion"> Déconnexion</a></li>
                     </ul>
@@ -63,11 +65,10 @@
                 <hr>
                 <div class="row">
                     <section class="col-md-6">
-                        <!-- if no image use default image -->
                         <img ng-src="{{PageBdService.bd.couvPath}}">
                     </section>
                     <section class="col-md-6" id="infoBD">
-                        <div ng-if="{{PageBdService.bd.publishDate}}">
+                        <div ng-show="{{PageBdService.bd.publishDate}}">
                             <label for="dateDisplay" class="col-sm-6 control-label">Date de publication:</label>
                             <p id="dateDisplay">{{PageBdService.bd.publishDate}}</p>
                         </div>
@@ -106,7 +107,7 @@
                     <section class="col-md-6">
                         <div id="bdIsNotInBibliBD" ng-if="!PageBdService.isInBibliBd">
                             <button class="btn btn-primary">
-                                <a class="changeLinkColor" ng-href="addToBibiliBd&id={{PageBdService.bd.id}}">
+                                <a class="changeLinkColor" ng-href="addToBibliBd&id={{PageBdService.bd.id}}">
                                     <span class="glyphicon glyphicon-plus-sign"></span> Ajouter à la bibliBD
                                 </a>
                             </button>
@@ -114,7 +115,7 @@
                         <div id="bdIsInBibliBD" ng-if="PageBdService.isInBibliBd">
                             <p>Cette Bd est dans votre bibliBD</p>
                             <button class="btn btn-primary">
-                                <a class="changeLinkColor" ng-href="delFromBibiliBd&id={{PageBdService.bd.id}}">
+                                <a class="changeLinkColor" ng-href="delFromBibliBd&id={{PageBdService.bd.id}}">
                                     <span class="glyphicon glyphicon-minus-sign"></span> Supprimer de la bibliBD
                                 </a>
                             </button>
