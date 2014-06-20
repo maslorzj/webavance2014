@@ -1,6 +1,6 @@
 myApp.service('BibliBdService', function(){
 	this.bds = bds;
-	if(classifyingArray) {
+	if(typeof(classifyingArray) != 'undefined') {
 		this.classifyingArray = classifyingArray;
 	}
 });

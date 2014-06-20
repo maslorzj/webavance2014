@@ -29,7 +29,7 @@
         <link href="resources/css/bd.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body  ng-controller="IndexController" ng-cloack>
 
         <!-- Header -->
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -79,7 +79,7 @@
                         </div>
                     </div>  
                 </div> -->
-                <div class="container marketing" id="photoContainer" ng-controller="IndexController" ng-cloack>
+                <div class="container marketing" id="photoContainer">
                     <div>
                         <div ng-repeat="bd in bds| filter:search | orderBy:filterOrders">
                             <div class="col-xs-3">
